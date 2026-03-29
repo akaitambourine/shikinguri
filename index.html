@@ -102,14 +102,13 @@
                     <label class="block font-bold text-gray-800 text-lg mb-1">売上</label>
                     <p class="text-xs text-gray-400 mb-3">※ざっくりでOK！</p>
                     <div class="flex items-center gap-2">
-                        <div class="relative flex-1 flex items-center bg-gray-50 border border-gray-200 rounded-xl transition-all shadow-inner input-group-focus overflow-hidden group">
-                            <input type="text" inputmode="decimal" id="sales" class="money-input w-full bg-transparent px-3 py-3 text-lg font-bold text-right outline-none text-gray-800" placeholder="例: 150.5">
-                            <span class="text-gray-500 font-bold pr-2">万</span>
-                            <button type="button" tabindex="-1" class="next-inline-btn text-blue-600 font-bold text-sm whitespace-nowrap pr-3 active:opacity-40 transition-opacity" data-next="exp1">次へ</button>
+                        <div class="relative flex-1 flex items-center bg-gray-50 border border-gray-200 rounded-xl transition-all shadow-inner input-group-focus overflow-hidden">
+                            <input type="text" inputmode="decimal" id="sales" class="money-input w-full bg-transparent px-4 py-3 text-xl font-black text-right outline-none text-gray-800" placeholder="例: 150.5">
+                            <span class="text-gray-500 font-bold pr-4">万</span>
                         </div>
                         <div class="bg-gray-100 p-1 rounded-xl flex w-[88px] border border-gray-200 items-stretch shrink-0">
-                            <button type="button" class="period-btn flex-1 bg-white shadow-sm text-blue-600 rounded-lg text-xs font-bold" data-target="sales" data-val="month">月</button>
-                            <button type="button" class="period-btn flex-1 text-gray-400 rounded-lg text-xs font-bold" data-target="sales" data-val="year">年</button>
+                            <button type="button" class="period-btn flex-1 bg-white shadow-sm text-blue-600 rounded-lg text-xs font-bold disabled:opacity-40 disabled:cursor-not-allowed transition-opacity" data-target="sales" data-val="month" disabled>月</button>
+                            <button type="button" class="period-btn flex-1 text-gray-400 rounded-lg text-xs font-bold disabled:opacity-40 disabled:cursor-not-allowed transition-opacity" data-target="sales" data-val="year" disabled>年</button>
                         </div>
                     </div>
                 </div>
@@ -121,13 +120,12 @@
                         <label id="label-exp1" class="block font-bold mb-2 text-gray-600 text-sm">経費1</label>
                         <div class="flex items-center gap-2">
                             <div class="relative flex-1 flex items-center bg-gray-50 border border-gray-200 rounded-xl transition-all shadow-inner input-group-focus overflow-hidden">
-                                <input type="text" inputmode="decimal" id="exp1" class="money-input w-full bg-transparent px-3 py-3 text-lg font-bold text-right outline-none text-gray-800" placeholder="例: 30">
-                                <span class="text-gray-500 font-bold pr-2">万</span>
-                                <button type="button" tabindex="-1" class="next-inline-btn text-blue-600 font-bold text-sm whitespace-nowrap pr-3 active:opacity-40 transition-opacity" data-next="exp2">次へ</button>
+                                <input type="text" inputmode="decimal" id="exp1" class="money-input w-full bg-transparent px-4 py-3 text-lg font-bold text-right outline-none text-gray-800" placeholder="例: 30">
+                                <span class="text-gray-500 font-bold pr-4">万</span>
                             </div>
                             <div class="bg-gray-100 p-1 rounded-xl flex w-[88px] border border-gray-200 items-stretch shrink-0">
-                                <button type="button" class="period-btn flex-1 bg-white shadow-sm text-blue-600 rounded-lg text-xs font-bold" data-target="exp1" data-val="month">月</button>
-                                <button type="button" class="period-btn flex-1 text-gray-400 rounded-lg text-xs font-bold" data-target="exp1" data-val="year">年</button>
+                                <button type="button" class="period-btn flex-1 bg-white shadow-sm text-blue-600 rounded-lg text-xs font-bold disabled:opacity-40 disabled:cursor-not-allowed transition-opacity" data-target="exp1" data-val="month" disabled>月</button>
+                                <button type="button" class="period-btn flex-1 text-gray-400 rounded-lg text-xs font-bold disabled:opacity-40 disabled:cursor-not-allowed transition-opacity" data-target="exp1" data-val="year" disabled>年</button>
                             </div>
                         </div>
                     </div>
@@ -136,13 +134,12 @@
                         <label id="label-exp2" class="block font-bold mb-2 text-gray-600 text-sm">経費2</label>
                         <div class="flex items-center gap-2">
                             <div class="relative flex-1 flex items-center bg-gray-50 border border-gray-200 rounded-xl transition-all shadow-inner input-group-focus overflow-hidden">
-                                <input type="text" inputmode="decimal" id="exp2" class="money-input w-full bg-transparent px-3 py-3 text-lg font-bold text-right outline-none text-gray-800" placeholder="例: 15">
-                                <span class="text-gray-500 font-bold pr-2">万</span>
-                                <button type="button" tabindex="-1" class="next-inline-btn text-blue-600 font-bold text-sm whitespace-nowrap pr-3 active:opacity-40 transition-opacity" data-next="exp3">次へ</button>
+                                <input type="text" inputmode="decimal" id="exp2" class="money-input w-full bg-transparent px-4 py-3 text-lg font-bold text-right outline-none text-gray-800" placeholder="例: 15">
+                                <span class="text-gray-500 font-bold pr-4">万</span>
                             </div>
                             <div class="bg-gray-100 p-1 rounded-xl flex w-[88px] border border-gray-200 items-stretch shrink-0">
-                                <button type="button" class="period-btn flex-1 bg-white shadow-sm text-blue-600 rounded-lg text-xs font-bold" data-target="exp2" data-val="month">月</button>
-                                <button type="button" class="period-btn flex-1 text-gray-400 rounded-lg text-xs font-bold" data-target="exp2" data-val="year">年</button>
+                                <button type="button" class="period-btn flex-1 bg-white shadow-sm text-blue-600 rounded-lg text-xs font-bold disabled:opacity-40 disabled:cursor-not-allowed transition-opacity" data-target="exp2" data-val="month" disabled>月</button>
+                                <button type="button" class="period-btn flex-1 text-gray-400 rounded-lg text-xs font-bold disabled:opacity-40 disabled:cursor-not-allowed transition-opacity" data-target="exp2" data-val="year" disabled>年</button>
                             </div>
                         </div>
                     </div>
@@ -151,13 +148,12 @@
                         <label class="block font-bold mb-2 text-gray-600 text-sm">雑費・その他の経費</label>
                         <div class="flex items-center gap-2">
                             <div class="relative flex-1 flex items-center bg-gray-50 border border-gray-200 rounded-xl transition-all shadow-inner input-group-focus overflow-hidden">
-                                <input type="text" inputmode="decimal" id="exp3" class="money-input w-full bg-transparent px-3 py-3 text-lg font-bold text-right outline-none text-gray-800" placeholder="例: 5">
-                                <span class="text-gray-500 font-bold pr-2">万</span>
-                                <button type="button" tabindex="-1" class="next-inline-btn text-blue-600 font-bold text-sm whitespace-nowrap pr-3 active:opacity-40 transition-opacity" data-next="labor">次へ</button>
+                                <input type="text" inputmode="decimal" id="exp3" class="money-input w-full bg-transparent px-4 py-3 text-lg font-bold text-right outline-none text-gray-800" placeholder="例: 5">
+                                <span class="text-gray-500 font-bold pr-4">万</span>
                             </div>
                             <div class="bg-gray-100 p-1 rounded-xl flex w-[88px] border border-gray-200 items-stretch shrink-0">
-                                <button type="button" class="period-btn flex-1 bg-white shadow-sm text-blue-600 rounded-lg text-xs font-bold" data-target="exp3" data-val="month">月</button>
-                                <button type="button" class="period-btn flex-1 text-gray-400 rounded-lg text-xs font-bold" data-target="exp3" data-val="year">年</button>
+                                <button type="button" class="period-btn flex-1 bg-white shadow-sm text-blue-600 rounded-lg text-xs font-bold disabled:opacity-40 disabled:cursor-not-allowed transition-opacity" data-target="exp3" data-val="month" disabled>月</button>
+                                <button type="button" class="period-btn flex-1 text-gray-400 rounded-lg text-xs font-bold disabled:opacity-40 disabled:cursor-not-allowed transition-opacity" data-target="exp3" data-val="year" disabled>年</button>
                             </div>
                         </div>
                     </div>
@@ -166,13 +162,12 @@
                         <label class="block font-bold mb-2 text-gray-600 text-sm">人件費（従業員・バイト等）</label>
                         <div class="flex items-center gap-2">
                             <div class="relative flex-1 flex items-center bg-gray-50 border border-gray-200 rounded-xl transition-all shadow-inner input-group-focus overflow-hidden">
-                                <input type="text" inputmode="decimal" id="labor" class="money-input w-full bg-transparent px-3 py-3 text-lg font-bold text-right outline-none text-gray-800" placeholder="※ない場合は0">
-                                <span class="text-gray-500 font-bold pr-2">万</span>
-                                <button type="button" tabindex="-1" class="next-inline-btn text-blue-600 font-bold text-sm whitespace-nowrap pr-3 active:opacity-40 transition-opacity" data-next="rent">次へ</button>
+                                <input type="text" inputmode="decimal" id="labor" class="money-input w-full bg-transparent px-4 py-3 text-lg font-bold text-right outline-none text-gray-800" placeholder="※ない場合は0">
+                                <span class="text-gray-500 font-bold pr-4">万</span>
                             </div>
                             <div class="bg-gray-100 p-1 rounded-xl flex w-[88px] border border-gray-200 items-stretch shrink-0">
-                                <button type="button" class="period-btn flex-1 bg-white shadow-sm text-blue-600 rounded-lg text-xs font-bold" data-target="labor" data-val="month">月</button>
-                                <button type="button" class="period-btn flex-1 text-gray-400 rounded-lg text-xs font-bold" data-target="labor" data-val="year">年</button>
+                                <button type="button" class="period-btn flex-1 bg-white shadow-sm text-blue-600 rounded-lg text-xs font-bold disabled:opacity-40 disabled:cursor-not-allowed transition-opacity" data-target="labor" data-val="month" disabled>月</button>
+                                <button type="button" class="period-btn flex-1 text-gray-400 rounded-lg text-xs font-bold disabled:opacity-40 disabled:cursor-not-allowed transition-opacity" data-target="labor" data-val="year" disabled>年</button>
                             </div>
                         </div>
                     </div>
@@ -199,13 +194,12 @@
                                 <label class="block font-bold mb-2 text-gray-600 text-sm">家賃・駐車場代</label>
                                 <div class="flex items-center gap-2">
                                     <div class="relative flex-1 flex items-center bg-gray-50 border border-gray-200 rounded-xl transition-all shadow-inner input-group-focus overflow-hidden">
-                                        <input type="text" inputmode="decimal" id="rent" class="money-input w-full bg-transparent px-3 py-3 text-lg font-bold text-right outline-none text-gray-800" placeholder="例: 8">
-                                        <span class="text-gray-500 font-bold pr-2">万</span>
-                                        <button type="button" tabindex="-1" class="next-inline-btn text-blue-600 font-bold text-sm whitespace-nowrap pr-3 active:opacity-40 transition-opacity" data-next="util">次へ</button>
+                                        <input type="text" inputmode="decimal" id="rent" class="money-input w-full bg-transparent px-4 py-3 text-lg font-bold text-right outline-none text-gray-800" placeholder="例: 8">
+                                        <span class="text-gray-500 font-bold pr-4">万</span>
                                     </div>
                                     <div class="bg-gray-100 p-1 rounded-xl flex w-[88px] border border-gray-200 items-stretch shrink-0">
-                                        <button type="button" class="period-btn flex-1 bg-white shadow-sm text-blue-600 rounded-lg text-xs font-bold" data-target="rent" data-val="month">月</button>
-                                        <button type="button" class="period-btn flex-1 text-gray-400 rounded-lg text-xs font-bold" data-target="rent" data-val="year">年</button>
+                                        <button type="button" class="period-btn flex-1 bg-white shadow-sm text-blue-600 rounded-lg text-xs font-bold disabled:opacity-40 disabled:cursor-not-allowed transition-opacity" data-target="rent" data-val="month" disabled>月</button>
+                                        <button type="button" class="period-btn flex-1 text-gray-400 rounded-lg text-xs font-bold disabled:opacity-40 disabled:cursor-not-allowed transition-opacity" data-target="rent" data-val="year" disabled>年</button>
                                     </div>
                                 </div>
                             </div>
@@ -213,13 +207,12 @@
                                 <label class="block font-bold mb-2 text-gray-600 text-sm">水道光熱費・通信費</label>
                                 <div class="flex items-center gap-2">
                                     <div class="relative flex-1 flex items-center bg-gray-50 border border-gray-200 rounded-xl transition-all shadow-inner input-group-focus overflow-hidden">
-                                        <input type="text" inputmode="decimal" id="util" class="money-input w-full bg-transparent px-3 py-3 text-lg font-bold text-right outline-none text-gray-800" placeholder="例: 3.5">
-                                        <span class="text-gray-500 font-bold pr-2">万</span>
-                                        <button type="button" tabindex="-1" class="next-inline-btn text-blue-600 font-bold text-sm whitespace-nowrap pr-3 active:opacity-40 transition-opacity" data-next="debt_total">次へ</button>
+                                        <input type="text" inputmode="decimal" id="util" class="money-input w-full bg-transparent px-4 py-3 text-lg font-bold text-right outline-none text-gray-800" placeholder="例: 3.5">
+                                        <span class="text-gray-500 font-bold pr-4">万</span>
                                     </div>
                                     <div class="bg-gray-100 p-1 rounded-xl flex w-[88px] border border-gray-200 items-stretch shrink-0">
-                                        <button type="button" class="period-btn flex-1 bg-white shadow-sm text-blue-600 rounded-lg text-xs font-bold" data-target="util" data-val="month">月</button>
-                                        <button type="button" class="period-btn flex-1 text-gray-400 rounded-lg text-xs font-bold" data-target="util" data-val="year">年</button>
+                                        <button type="button" class="period-btn flex-1 bg-white shadow-sm text-blue-600 rounded-lg text-xs font-bold disabled:opacity-40 disabled:cursor-not-allowed transition-opacity" data-target="util" data-val="month" disabled>月</button>
+                                        <button type="button" class="period-btn flex-1 text-gray-400 rounded-lg text-xs font-bold disabled:opacity-40 disabled:cursor-not-allowed transition-opacity" data-target="util" data-val="year" disabled>年</button>
                                     </div>
                                 </div>
                             </div>
@@ -233,10 +226,14 @@
                     <div class="mb-4 scroll-anchor" id="section-debt-total">
                         <label class="block font-bold text-gray-600 text-sm mb-1">現在の借入残高（総額）</label>
                         <p class="text-[10px] text-gray-400 mb-2">※事業用の借金すべて</p>
-                        <div class="relative flex items-center bg-gray-50 border border-gray-200 rounded-xl transition-all shadow-inner input-group-focus overflow-hidden">
-                            <input type="text" inputmode="decimal" id="debt_total" class="money-input w-full bg-transparent px-4 py-3 text-lg font-bold text-right outline-none text-gray-800" placeholder="例: 1000">
-                            <span class="text-gray-500 font-bold pr-2">万</span>
-                            <button type="button" tabindex="-1" class="next-inline-btn text-blue-600 font-bold text-sm whitespace-nowrap pr-3 active:opacity-40 transition-opacity" data-next="debt_monthly">次へ</button>
+                        <div class="flex items-center gap-2">
+                            <div class="relative flex-1 flex items-center bg-gray-50 border border-gray-200 rounded-xl transition-all shadow-inner input-group-focus overflow-hidden">
+                                <input type="text" inputmode="decimal" id="debt_total" class="money-input w-full bg-transparent px-4 py-3 text-lg font-bold text-right outline-none text-gray-800" placeholder="例: 1000">
+                                <span class="text-gray-500 font-bold pr-4">万</span>
+                            </div>
+                            <div class="bg-gray-100 p-1 rounded-xl flex w-[88px] border border-gray-200 items-stretch shrink-0">
+                                <button type="button" class="action-next-btn flex-1 bg-white shadow-sm text-blue-600 rounded-lg text-xs font-bold disabled:opacity-40 disabled:cursor-not-allowed transition-opacity" data-target="debt_total" disabled>次へ</button>
+                            </div>
                         </div>
                     </div>
 
@@ -245,12 +242,11 @@
                         <p class="text-[10px] text-gray-400 mb-2">※ない場合は0</p>
                         <div class="flex items-center gap-2">
                             <div class="relative flex-1 flex items-center bg-gray-50 border border-gray-200 rounded-xl transition-all shadow-inner input-group-focus overflow-hidden">
-                                <input type="text" inputmode="decimal" id="debt_monthly" class="money-input w-full bg-transparent px-3 py-3 text-lg font-bold text-right outline-none text-gray-800" placeholder="例: 11">
-                                <span class="text-gray-500 font-bold pr-2">万</span>
-                                <button type="button" tabindex="-1" class="next-inline-btn text-blue-600 font-bold text-sm whitespace-nowrap pr-3 active:opacity-40 transition-opacity" data-next="delinquency-anchor">完了</button>
+                                <input type="text" inputmode="decimal" id="debt_monthly" class="money-input w-full bg-transparent px-4 py-3 text-lg font-bold text-right outline-none text-gray-800" placeholder="例: 11">
+                                <span class="text-gray-500 font-bold pr-4">万</span>
                             </div>
-                            <div class="bg-gray-100 border border-gray-200 rounded-xl px-3 py-3 text-xs font-bold text-gray-500 flex items-center justify-center shrink-0">
-                                /月 固定
+                            <div class="bg-gray-100 p-1 rounded-xl flex w-[88px] border border-gray-200 items-stretch shrink-0">
+                                <button type="button" class="action-next-btn flex-1 bg-white shadow-sm text-blue-600 rounded-lg text-xs font-bold disabled:opacity-40 disabled:cursor-not-allowed transition-opacity" data-target="debt_monthly" disabled>完了</button>
                             </div>
                         </div>
                     </div>
@@ -320,6 +316,7 @@
             const submitBtnWrapper = document.getElementById('submit-btn-wrapper');
             const btnSubmit = document.getElementById('btn-submit');
             
+            // --- Web Audio API (音) ---
             let audioCtx = null;
             const playSound = (type) => {
                 try {
@@ -353,11 +350,10 @@
                         gain.gain.setValueAtTime(0.5, now); gain.gain.exponentialRampToValueAtTime(0.01, now + 1.5);
                         osc.start(now); osc.stop(now + 1.5);
                     }
-                } catch(e) {
-                    console.log("Audio API blocked");
-                }
+                } catch(e) { console.log("Audio API blocked"); }
             };
 
+            // --- スクロール制御 ---
             const scrollToElement = (elementId) => {
                 const el = document.getElementById(elementId);
                 if (el) {
@@ -375,29 +371,101 @@
                 });
             });
 
-            document.querySelectorAll('.next-inline-btn').forEach(btn => {
-                // ★超重要：ボタンを押しても入力欄のフォーカス（キーボード）が消えないようにする魔法★
-                btn.addEventListener('mousedown', (e) => e.preventDefault());
-                btn.addEventListener('touchstart', (e) => e.preventDefault(), {passive: false});
+            // ★ 次の入力欄へ進む共通関数 ★
+            const advanceToNext = (nextId) => {
+                if (!nextId) return;
+                
+                // 次のIDを特定（家賃のON/OFFで分岐）
+                let targetId = nextId;
+                if (nextId === 'rent-or-debt') {
+                    targetId = state.hasRent ? 'rent' : 'debt_total';
+                } else if (nextId === 'util-or-debt') {
+                    targetId = state.hasRent ? 'util' : 'debt_total';
+                }
+
+                // スクロール先を特定
+                if (targetId === 'rent') {
+                    scrollToElement('sub-rent');
+                    document.getElementById('rent').focus();
+                } else if (targetId === 'util') {
+                    scrollToElement('sub-util');
+                    document.getElementById('util').focus();
+                } else if (targetId === 'debt_total') {
+                    scrollToElement('section-debt-total');
+                    document.getElementById('debt_total').focus();
+                } else if (targetId === 'debt_monthly') {
+                    scrollToElement('section-debt-monthly');
+                    document.getElementById('debt_monthly').focus();
+                } else if (targetId === 'delinquency-anchor') {
+                    scrollToElement('section-delinquency');
+                    document.activeElement.blur(); 
+                } else {
+                    const nextInput = document.getElementById(targetId);
+                    if (nextInput) {
+                        scrollToElement(`section-${targetId}`);
+                        nextInput.focus();
+                    }
+                }
+            };
+
+            // --- UIイベント ---
+            
+            // ★ 月/年ボタンを押した時に「次へ」進む魔法 ★
+            document.querySelectorAll('.period-btn').forEach(btn => {
+                btn.addEventListener('mousedown', (e) => {
+                    if(!btn.disabled) e.preventDefault();
+                });
+                btn.addEventListener('touchstart', (e) => {
+                    if(!btn.disabled) e.preventDefault();
+                }, {passive: false});
 
                 btn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const nextId = btn.dataset.next;
-                    if (nextId === 'rent') {
-                        if(state.hasRent) {
-                            scrollToElement('sub-rent');
-                            document.getElementById('rent').focus();
+                    if(btn.disabled) return;
+
+                    const target = btn.dataset.target;
+                    const val = btn.dataset.val;
+                    state[`${target}Period`] = val;
+                    
+                    document.querySelectorAll(`.period-btn[data-target="${target}"]`).forEach(b => {
+                        if (b.dataset.val === val) {
+                            b.classList.add('bg-white', 'shadow-sm', 'text-blue-600');
+                            b.classList.remove('text-gray-400');
                         } else {
-                            scrollToElement('section-debt-total');
-                            document.getElementById('debt_total').focus();
+                            b.classList.remove('bg-white', 'shadow-sm', 'text-blue-600');
+                            b.classList.add('text-gray-400');
                         }
-                    } else if (nextId === 'delinquency-anchor') {
-                        scrollToElement('section-delinquency');
-                        document.activeElement.blur(); // 最後の「完了」の時だけキーボードを閉じる
-                    } else {
-                        const nextInput = document.getElementById(nextId);
-                        if (nextInput) nextInput.focus();
-                    }
+                    });
+
+                    // 自動で次に進む
+                    let nextId = '';
+                    if (target === 'sales') nextId = 'exp1';
+                    if (target === 'exp1') nextId = 'exp2';
+                    if (target === 'exp2') nextId = 'exp3';
+                    if (target === 'exp3') nextId = 'labor';
+                    if (target === 'labor') nextId = 'rent-or-debt';
+                    if (target === 'rent') nextId = 'util';
+                    if (target === 'util') nextId = 'debt_total';
+                    
+                    advanceToNext(nextId);
+                });
+            });
+
+            // ★ 借金の横にある「次へ/完了」ボタン ★
+            document.querySelectorAll('.action-next-btn').forEach(btn => {
+                btn.addEventListener('mousedown', (e) => {
+                    if(!btn.disabled) e.preventDefault();
+                });
+                btn.addEventListener('touchstart', (e) => {
+                    if(!btn.disabled) e.preventDefault();
+                }, {passive: false});
+
+                btn.addEventListener('click', (e) => {
+                    if(btn.disabled) return;
+                    const targetId = btn.dataset.target;
+                    let nextId = '';
+                    if (targetId === 'debt_total') nextId = 'debt_monthly';
+                    if (targetId === 'debt_monthly') nextId = 'delinquency-anchor';
+                    advanceToNext(nextId);
                 });
             });
 
@@ -433,24 +501,6 @@
                     submitBtnWrapper.classList.replace('opacity-0', 'opacity-100');
                 }
             };
-
-            // --- UIイベント ---
-            document.querySelectorAll('.period-btn').forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    const target = btn.dataset.target;
-                    const val = btn.dataset.val;
-                    state[`${target}Period`] = val;
-                    document.querySelectorAll(`.period-btn[data-target="${target}"]`).forEach(b => {
-                        if (b.dataset.val === val) {
-                            b.classList.add('bg-white', 'shadow-sm', 'text-blue-600');
-                            b.classList.remove('text-gray-400');
-                        } else {
-                            b.classList.remove('bg-white', 'shadow-sm', 'text-blue-600');
-                            b.classList.add('text-gray-400');
-                        }
-                    });
-                });
-            });
 
             qBtns.forEach(btn => {
                 btn.addEventListener('click', () => {
@@ -501,6 +551,11 @@
                     rentWrapper.classList.remove('open');
                     state.rent = ''; document.getElementById('rent').value = '';
                     state.util = ''; document.getElementById('util').value = '';
+                    
+                    // 家賃の値をクリアしたらボタンのロック状態も更新
+                    document.querySelectorAll(`.period-btn[data-target="rent"], .period-btn[data-target="util"]`).forEach(b => {
+                        b.disabled = true;
+                    });
                 }
                 updateProgress();
             });
@@ -510,11 +565,23 @@
                     let val = e.target.value.replace(/[０-９．]/g, s => String.fromCharCode(s.charCodeAt(0) - 0xFEE0)).replace(/[^0-9.]/g, '');
                     const parts = val.split('.');
                     if (parts.length > 2) val = parts[0] + '.' + parts.slice(1).join('');
-                    e.target.value = val; state[e.target.id] = val;
+                    e.target.value = val; 
+                    state[e.target.id] = val;
+
+                    // ★ 入力値がある時だけ横のボタンのロックを解除する ★
+                    const hasValue = val.length > 0;
+                    const targetId = e.target.id;
+                    document.querySelectorAll(`.period-btn[data-target="${targetId}"], .action-next-btn[data-target="${targetId}"]`).forEach(btn => {
+                        btn.disabled = !hasValue;
+                    });
+
                     updateProgress();
                 });
             });
 
+            // ==============================================
+            // 診断実行 ＆ 絶望アニメーション
+            // ==============================================
             btnSubmit.addEventListener('click', () => {
                 document.activeElement.blur(); 
 
