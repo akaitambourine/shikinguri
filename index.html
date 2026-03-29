@@ -13,7 +13,7 @@
             transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease-in-out;
             max-height: 0; opacity: 0; overflow: hidden;
         }
-        .expandable.open { max-height: 250px; opacity: 1; } /* 光熱費が増えた分少し高く */
+        .expandable.open { max-height: 250px; opacity: 1; }
 
         .waterfall-item {
             opacity: 0; transform: translateY(-15px); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -92,7 +92,7 @@
                     <p class="text-xs text-gray-400 mb-3">※ざっくりでOK！</p>
                     <div class="flex items-center gap-2">
                         <div class="relative flex-1">
-                            <input type="text" inputmode="decimal" id="sales" class="money-input w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-xl font-black text-right pr-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all placeholder-gray-300 text-gray-800" placeholder="例: 150.5">
+                            <input type="text" inputmode="decimal" id="sales" class="money-input w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-xl font-black text-right pr-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all placeholder-gray-300 text-gray-800" placeholder="例: 150.5" data-next="exp1">
                             <span class="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 font-bold">万</span>
                         </div>
                         <div class="bg-gray-100 p-1 rounded-xl flex w-[96px] border border-gray-200 items-stretch">
@@ -109,7 +109,7 @@
                         <label id="label-exp1" class="block font-bold mb-2 text-gray-600 text-sm">経費1</label>
                         <div class="flex items-center gap-2">
                             <div class="relative flex-1">
-                                <input type="text" inputmode="decimal" id="exp1" class="money-input w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-lg font-bold text-right pr-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all placeholder-gray-300 text-gray-800" placeholder="例: 30">
+                                <input type="text" inputmode="decimal" id="exp1" class="money-input w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-lg font-bold text-right pr-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all placeholder-gray-300 text-gray-800" placeholder="例: 30" data-next="exp2">
                                 <span class="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 font-bold">万</span>
                             </div>
                             <div class="bg-gray-100 p-1 rounded-xl flex w-[96px] border border-gray-200 items-stretch">
@@ -123,7 +123,7 @@
                         <label id="label-exp2" class="block font-bold mb-2 text-gray-600 text-sm">経費2</label>
                         <div class="flex items-center gap-2">
                             <div class="relative flex-1">
-                                <input type="text" inputmode="decimal" id="exp2" class="money-input w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-lg font-bold text-right pr-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all placeholder-gray-300 text-gray-800" placeholder="例: 15">
+                                <input type="text" inputmode="decimal" id="exp2" class="money-input w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-lg font-bold text-right pr-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all placeholder-gray-300 text-gray-800" placeholder="例: 15" data-next="exp3">
                                 <span class="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 font-bold">万</span>
                             </div>
                             <div class="bg-gray-100 p-1 rounded-xl flex w-[96px] border border-gray-200 items-stretch">
@@ -137,7 +137,7 @@
                         <label class="block font-bold mb-2 text-gray-600 text-sm">雑費・その他の経費</label>
                         <div class="flex items-center gap-2">
                             <div class="relative flex-1">
-                                <input type="text" inputmode="decimal" id="exp3" class="money-input w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-lg font-bold text-right pr-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all placeholder-gray-300 text-gray-800" placeholder="例: 5">
+                                <input type="text" inputmode="decimal" id="exp3" class="money-input w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-lg font-bold text-right pr-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all placeholder-gray-300 text-gray-800" placeholder="例: 5" data-next="labor">
                                 <span class="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 font-bold">万</span>
                             </div>
                             <div class="bg-gray-100 p-1 rounded-xl flex w-[96px] border border-gray-200 items-stretch">
@@ -151,7 +151,7 @@
                         <label class="block font-bold mb-2 text-gray-600 text-sm">人件費（従業員・バイト等）</label>
                         <div class="flex items-center gap-2">
                             <div class="relative flex-1">
-                                <input type="text" inputmode="decimal" id="labor" class="money-input w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-lg font-bold text-right pr-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all placeholder-gray-300 text-gray-800" placeholder="※ない場合は0">
+                                <input type="text" inputmode="decimal" id="labor" class="money-input w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-lg font-bold text-right pr-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all placeholder-gray-300 text-gray-800" placeholder="※ない場合は0" data-next="rent">
                                 <span class="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 font-bold">万</span>
                             </div>
                             <div class="bg-gray-100 p-1 rounded-xl flex w-[96px] border border-gray-200 items-stretch">
@@ -183,7 +183,7 @@
                                 <label class="block font-bold mb-2 text-gray-600 text-sm">家賃・駐車場代</label>
                                 <div class="flex items-center gap-2">
                                     <div class="relative flex-1">
-                                        <input type="text" inputmode="decimal" id="rent" class="money-input w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-lg font-bold text-right pr-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all placeholder-gray-300 text-gray-800" placeholder="例: 8">
+                                        <input type="text" inputmode="decimal" id="rent" class="money-input w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-lg font-bold text-right pr-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all placeholder-gray-300 text-gray-800" placeholder="例: 8" data-next="util">
                                         <span class="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 font-bold">万</span>
                                     </div>
                                     <div class="bg-gray-100 p-1 rounded-xl flex w-[96px] border border-gray-200 items-stretch">
@@ -196,7 +196,7 @@
                                 <label class="block font-bold mb-2 text-gray-600 text-sm">水道光熱費・通信費</label>
                                 <div class="flex items-center gap-2">
                                     <div class="relative flex-1">
-                                        <input type="text" inputmode="decimal" id="util" class="money-input w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-lg font-bold text-right pr-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all placeholder-gray-300 text-gray-800" placeholder="例: 3.5">
+                                        <input type="text" inputmode="decimal" id="util" class="money-input w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-lg font-bold text-right pr-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all placeholder-gray-300 text-gray-800" placeholder="例: 3.5" data-next="debt_total">
                                         <span class="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 font-bold">万</span>
                                     </div>
                                     <div class="bg-gray-100 p-1 rounded-xl flex w-[96px] border border-gray-200 items-stretch">
@@ -216,7 +216,7 @@
                         <label class="block font-bold text-gray-600 text-sm mb-1">現在の借入残高（総額）</label>
                         <p class="text-[10px] text-gray-400 mb-2">※事業用の借金すべて</p>
                         <div class="relative">
-                            <input type="text" inputmode="decimal" id="debt_total" class="money-input w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-lg font-bold text-right pr-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all placeholder-gray-300 text-gray-800" placeholder="例: 1000">
+                            <input type="text" inputmode="decimal" id="debt_total" class="money-input w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-lg font-bold text-right pr-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all placeholder-gray-300 text-gray-800" placeholder="例: 1000" data-next="debt_monthly">
                             <span class="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 font-bold">万</span>
                         </div>
                     </div>
@@ -226,7 +226,7 @@
                         <p class="text-[10px] text-gray-400 mb-2">※ない場合は0</p>
                         <div class="flex items-center gap-2">
                             <div class="relative flex-1">
-                                <input type="text" inputmode="decimal" id="debt_monthly" class="money-input w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-lg font-bold text-right pr-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all placeholder-gray-300 text-gray-800" placeholder="例: 11">
+                                <input type="text" inputmode="decimal" id="debt_monthly" class="money-input w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-lg font-bold text-right pr-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all placeholder-gray-300 text-gray-800" placeholder="例: 11" data-next="delinquency-anchor">
                                 <span class="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 font-bold">万</span>
                             </div>
                             <div class="bg-gray-100 border border-gray-200 rounded-xl px-4 py-3 text-sm font-bold text-gray-500 flex items-center justify-center">
@@ -237,7 +237,7 @@
                 </div>
 
                 <div class="bg-white rounded-2xl shadow-sm p-5 mb-10 border border-gray-100 scroll-anchor" id="section-delinquency">
-                    <h3 class="font-bold mb-4 text-gray-800 text-base text-center">税金や借金の滞納はある？</h3>
+                    <h3 class="font-bold mb-4 text-gray-800 text-base text-center" id="delinquency-anchor">税金や借金の滞納はある？</h3>
                     <div class="flex gap-3">
                         <button type="button" class="q-btn flex-1 text-center py-4 rounded-xl border-2 border-gray-100 bg-gray-50 text-gray-600 font-bold transition-colors active:scale-[0.98]" data-q="delinquency" data-val="yes">はい</button>
                         <button type="button" class="q-btn flex-1 text-center py-4 rounded-xl border-2 border-gray-100 bg-gray-50 text-gray-600 font-bold transition-colors active:scale-[0.98]" data-q="delinquency" data-val="no">いいえ</button>
@@ -310,35 +310,41 @@
             const btnSubmit = document.getElementById('btn-submit');
             
             // --- Web Audio API (音) ---
-            const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            let audioCtx = null;
             const playSound = (type) => {
-                if (audioCtx.state === 'suspended') audioCtx.resume();
-                const osc = audioCtx.createOscillator();
-                const gain = audioCtx.createGain();
-                osc.connect(gain);
-                gain.connect(audioCtx.destination);
+                try {
+                    if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                    if (audioCtx.state === 'suspended') audioCtx.resume();
+                    
+                    const osc = audioCtx.createOscillator();
+                    const gain = audioCtx.createGain();
+                    osc.connect(gain);
+                    gain.connect(audioCtx.destination);
 
-                const now = audioCtx.currentTime;
-                if (type === 'chime') {
-                    osc.type = 'sine'; osc.frequency.setValueAtTime(880, now); osc.frequency.exponentialRampToValueAtTime(1760, now + 0.1);
-                    gain.gain.setValueAtTime(0.3, now); gain.gain.exponentialRampToValueAtTime(0.01, now + 0.3);
-                    osc.start(now); osc.stop(now + 0.3);
-                } else if (type === 'cash') {
-                    osc.type = 'square'; osc.frequency.setValueAtTime(100, now);
-                    gain.gain.setValueAtTime(0.15, now); gain.gain.exponentialRampToValueAtTime(0.01, now + 0.15);
-                    osc.start(now); osc.stop(now + 0.15);
-                } else if (type === 'thud') {
-                    osc.type = 'triangle'; osc.frequency.setValueAtTime(150, now); osc.frequency.exponentialRampToValueAtTime(40, now + 0.3);
-                    gain.gain.setValueAtTime(0.3, now); gain.gain.exponentialRampToValueAtTime(0.01, now + 0.4);
-                    osc.start(now); osc.stop(now + 0.4);
-                } else if (type === 'error') {
-                    osc.type = 'sawtooth'; osc.frequency.setValueAtTime(120, now); osc.frequency.setValueAtTime(100, now + 0.1);
-                    gain.gain.setValueAtTime(0.2, now); gain.gain.linearRampToValueAtTime(0, now + 0.4);
-                    osc.start(now); osc.stop(now + 0.4);
-                } else if (type === 'doom') {
-                    osc.type = 'sine'; osc.frequency.setValueAtTime(60, now); osc.frequency.exponentialRampToValueAtTime(20, now + 1.5);
-                    gain.gain.setValueAtTime(0.5, now); gain.gain.exponentialRampToValueAtTime(0.01, now + 1.5);
-                    osc.start(now); osc.stop(now + 1.5);
+                    const now = audioCtx.currentTime;
+                    if (type === 'chime') {
+                        osc.type = 'sine'; osc.frequency.setValueAtTime(880, now); osc.frequency.exponentialRampToValueAtTime(1760, now + 0.1);
+                        gain.gain.setValueAtTime(0.3, now); gain.gain.exponentialRampToValueAtTime(0.01, now + 0.3);
+                        osc.start(now); osc.stop(now + 0.3);
+                    } else if (type === 'cash') {
+                        osc.type = 'square'; osc.frequency.setValueAtTime(100, now);
+                        gain.gain.setValueAtTime(0.15, now); gain.gain.exponentialRampToValueAtTime(0.01, now + 0.15);
+                        osc.start(now); osc.stop(now + 0.15);
+                    } else if (type === 'thud') {
+                        osc.type = 'triangle'; osc.frequency.setValueAtTime(150, now); osc.frequency.exponentialRampToValueAtTime(40, now + 0.3);
+                        gain.gain.setValueAtTime(0.3, now); gain.gain.exponentialRampToValueAtTime(0.01, now + 0.4);
+                        osc.start(now); osc.stop(now + 0.4);
+                    } else if (type === 'error') {
+                        osc.type = 'sawtooth'; osc.frequency.setValueAtTime(120, now); osc.frequency.setValueAtTime(100, now + 0.1);
+                        gain.gain.setValueAtTime(0.2, now); gain.gain.linearRampToValueAtTime(0, now + 0.4);
+                        osc.start(now); osc.stop(now + 0.4);
+                    } else if (type === 'doom') {
+                        osc.type = 'sine'; osc.frequency.setValueAtTime(60, now); osc.frequency.exponentialRampToValueAtTime(20, now + 1.5);
+                        gain.gain.setValueAtTime(0.5, now); gain.gain.exponentialRampToValueAtTime(0.01, now + 1.5);
+                        osc.start(now); osc.stop(now + 1.5);
+                    }
+                } catch(e) {
+                    console.log("Audio play error"); // 音が鳴らなくても処理は止めない
                 }
             };
 
@@ -346,8 +352,8 @@
             const scrollToElement = (elementId) => {
                 const el = document.getElementById(elementId);
                 if (el) {
-                    // キーボードが出ていることを想定し、画面の上部〜中央に配置する
-                    const y = el.getBoundingClientRect().top + window.scrollY - 100;
+                    // キーボードが出ていることを想定し、画面の中央やや上に配置する
+                    const y = el.getBoundingClientRect().top + window.scrollY - (window.innerHeight / 3);
                     window.scrollTo({ top: y, behavior: 'smooth' });
                 }
             };
@@ -357,7 +363,7 @@
                 input.addEventListener('focus', (e) => {
                     const parentSection = e.target.closest('.scroll-anchor');
                     if (parentSection) {
-                        setTimeout(() => scrollToElement(parentSection.id), 200); // ソフトウェアキーボード展開待ち
+                        setTimeout(() => scrollToElement(parentSection.id), 250); // ソフトウェアキーボード展開待ち
                     }
                 });
             });
@@ -467,13 +473,31 @@
                     e.target.value = val; state[e.target.id] = val;
                     updateProgress();
                 });
+
+                // PCやAndroid向けのEnter検知 (iOSの完了ボタンはBlurで発火するため、上のfocusイベントで追従カバーする)
+                input.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
+                        const nextId = input.dataset.next;
+                        if (nextId === 'delinquency-anchor') {
+                            input.blur(); scrollToElement('section-delinquency');
+                        } else {
+                            const nextInput = document.getElementById(nextId);
+                            if (nextInput) { nextInput.focus(); }
+                        }
+                    }
+                });
             });
 
             // ==============================================
             // 診断実行 ＆ 絶望アニメーション
             // ==============================================
             btnSubmit.addEventListener('click', () => {
-                if(audioCtx.state === 'suspended') audioCtx.resume();
+                // 音の初期化(ユーザーアクション起因)
+                try {
+                    if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                    if(audioCtx.state === 'suspended') audioCtx.resume();
+                } catch(e){}
 
                 // 1. データの月額正規化 (parseFloat対応)
                 const getMonthly = (valStr, period) => {
@@ -503,4 +527,134 @@
                 // ②所得税/法人税 (利益の約15%)
                 const tax_inc = Math.max(0, m_gross * 0.15);
                 
-                // ③住民税/事業税 (
+                // ③住民税/事業税 (利益の約10%)
+                const tax_res = Math.max(0, m_gross * 0.10);
+                
+                // ④社会保険料/国保 (利益の約12%)
+                const tax_soc = Math.max(0, m_gross * 0.12);
+
+                const m_tax_total = tax_cons + tax_inc + tax_res + tax_soc;
+
+                // 最終手残り
+                const m_net = m_gross - m_debt - m_tax_total;
+
+                const round1 = (num) => Math.round(num * 10) / 10;
+
+                // 3. アフィリエイト判定ロジック
+                let resultType, resultTitle, resultText, btnColor, btnText;
+                const isDebtAbnormal = m_debt > 0 && debt_tot > 0 && (debt_tot / m_debt) < 48; // 短期高金利フラグ
+                const isBankrupt = m_net < 0 && (debt_tot > m_sales * 6 || state.delinquency === 'yes');
+
+                if (isBankrupt) {
+                    resultType = '弁護士';
+                    resultTitle = '【危険】完全な資金ショート状態です';
+                    resultText = '借金の返済と容赦ない税金で、会社のお金が完全に底を突いています。このまま放置すると口座凍結・破産が確定します。今すぐ弁護士に無料相談し、返済をストップさせてください。';
+                    btnColor = 'from-red-600 to-rose-700 shadow-red-500/30';
+                    btnText = '🚨 今すぐ借金の減額診断をする(無料)';
+                } else if (isDebtAbnormal || m_net <= 0) {
+                    resultType = '資金調達';
+                    resultTitle = '【警告】異常な金利で首が締まっています';
+                    resultText = '稼いでも稼いでも、異常な借金返済のせいで手元にお金が残らない「黒字倒産」の危険水域です。高金利の借金を借り換えるか、売掛金を現金化（ファクタリング）して早急に血止めの対策を。';
+                    btnColor = 'from-orange-500 to-red-600 shadow-orange-500/30';
+                    btnText = '⚡ 資金調達・借り換えのプロに相談する';
+                } else if (m_tax_total >= 10 || state.q2 === 'white') {
+                    resultType = '税理士';
+                    resultTitle = '【注意】国に税金を払いすぎています';
+                    resultText = 'お金は回っていますが、申告方法や節税対策が甘いため「見えない借金（税金）」で大損しています。プロの税理士に頼めば、月々の手残りはさらに数万〜数十万円増える可能性が高いです。';
+                    btnColor = 'from-blue-600 to-indigo-600 shadow-blue-500/30';
+                    btnText = '👨‍💼 強い税理士を無料で探す';
+                } else {
+                    resultType = '会計ソフト';
+                    resultTitle = '【順調】まずは日々の数字の見える化を！';
+                    resultText = '現状、致命的な資金ショートの危険はありません。この健全な状態を維持するために、クラウド会計ソフトを導入して日々の数字をスマホで正確に把握できるようにしましょう。';
+                    btnColor = 'from-emerald-500 to-teal-600 shadow-emerald-500/30';
+                    btnText = '📱 おすすめのクラウド会計ソフトを見る';
+                }
+
+                // 4. UIの切り替え
+                document.getElementById('view-form').classList.add('hidden');
+                document.getElementById('body').classList.replace('bg-gray-100', 'bg-slate-900');
+                const resultView = document.getElementById('view-result');
+                resultView.classList.remove('hidden');
+                window.scrollTo(0, 0);
+
+                const waterfall = document.getElementById('result-waterfall');
+                waterfall.innerHTML = '';
+
+                const createCard = (title, amount, isMinus, isTax) => {
+                    const sign = isMinus ? '-' : '';
+                    const color = isMinus ? (isTax ? 'text-orange-400' : 'text-rose-400') : 'text-blue-400';
+                    const bg = isTax ? 'bg-slate-800 border-orange-500/30' : 'bg-slate-800/50 border-slate-700';
+                    return `
+                        <div class="waterfall-item w-full ${bg} border rounded-xl p-3.5 flex justify-between items-center shadow-lg">
+                            <span class="text-slate-300 text-sm font-bold">${title}</span>
+                            <span class="text-xl font-black ${color}">${sign}${round1(amount).toLocaleString()} <span class="text-xs font-normal">万円</span></span>
+                        </div>
+                    `;
+                };
+
+                // 連続攻撃のアイテム定義
+                const items = [
+                    { html: createCard('① 月間 売上高', m_sales, false, false), sound: 'chime', delay: 500 },
+                    { html: createCard('② 経費・人件費・家賃等', m_exp_total, true, false), sound: 'cash', delay: 1500 },
+                    { html: createCard('③ 月々の借金返済', m_debt, true, false), sound: 'thud', delay: 2500 },
+                    
+                    // 税金フルボッコパート
+                    { html: createCard('④ 消費税 (概算)', tax_cons, true, true), sound: 'thud', delay: 3500 },
+                    { html: createCard('⑤ 所得・法人税 (概算)', tax_inc, true, true), sound: 'thud', delay: 4200 },
+                    { html: createCard('⑥ 住民・事業税 (概算)', tax_res, true, true), sound: 'thud', delay: 4900 },
+                    { html: createCard('⑦ 国保・社保料 (概算)', tax_soc, true, true), sound: 'error', delay: 5600, flash: true },
+                    
+                    // 最終宣告
+                    { html: `
+                        <div class="waterfall-item w-full mt-6 p-1 rounded-2xl bg-gradient-to-b ${m_net < 0 ? 'from-rose-500 to-red-700' : 'from-emerald-400 to-teal-600'}">
+                            <div class="bg-slate-900 rounded-xl p-5 text-center">
+                                <p class="text-slate-300 text-sm font-bold mb-2">あなたが自由に使える【手残り現金】</p>
+                                <p class="text-5xl font-black ${m_net < 0 ? 'text-rose-500' : 'text-emerald-400'}">${round1(m_net).toLocaleString()}<span class="text-lg ml-1">万円</span></p>
+                            </div>
+                        </div>
+                    `, sound: 'doom', delay: 7000 }
+                ];
+
+                items.forEach(item => {
+                    setTimeout(() => {
+                        const div = document.createElement('div');
+                        div.innerHTML = item.html;
+                        const el = div.firstElementChild;
+                        waterfall.appendChild(el);
+                        
+                        requestAnimationFrame(() => {
+                            el.classList.add('show');
+                            playSound(item.sound);
+                            if (item.flash) document.getElementById('body').classList.add('flash-danger');
+                        });
+                        
+                        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+                    }, item.delay);
+                });
+
+                // アフィリエイト表示
+                setTimeout(() => {
+                    const affArea = document.getElementById('affiliate-area');
+                    affArea.innerHTML = `
+                        <div class="bg-slate-800 rounded-2xl p-5 border border-slate-700 shadow-2xl relative overflow-hidden">
+                            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${btnColor.replace('shadow-', '')}"></div>
+                            <h3 class="text-base font-bold text-white mb-3 flex items-center gap-2">
+                                <svg class="w-5 h-5 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                                専門家からの緊急警告
+                            </h3>
+                            <p class="text-sm text-slate-300 leading-relaxed mb-5">${resultText}</p>
+                            <a href="#" onclick="alert('${resultType}のアフィリエイトリンクへ遷移！'); return false;" class="block w-full py-4 rounded-xl bg-gradient-to-r ${btnColor} text-white text-center font-bold text-sm shadow-lg transform active:scale-95 transition-transform">
+                                ${btnText}
+                            </a>
+                        </div>
+                    `;
+                    affArea.classList.remove('hidden');
+                    requestAnimationFrame(() => affArea.classList.replace('opacity-0', 'opacity-100'));
+                    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+                }, 8500);
+            });
+        });
+    </script>
+</body>
+</html>
