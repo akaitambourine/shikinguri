@@ -92,7 +92,7 @@
                     <p class="text-xs text-gray-400 mb-3">※ざっくりでOK！</p>
                     <div class="flex items-center gap-2">
                         <div class="relative flex-1">
-                            <input type="text" inputmode="decimal" id="sales" class="money-input w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-xl font-black text-right pr-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all placeholder-gray-300 text-gray-800" placeholder="例: 150.5" data-next="exp1">
+                            <input type="text" inputmode="decimal" enterkeyhint="next" id="sales" class="money-input w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-xl font-black text-right pr-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all placeholder-gray-300 text-gray-800" placeholder="例: 150.5" data-next="exp1">
                             <span class="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 font-bold">万</span>
                         </div>
                         <div class="bg-gray-100 p-1 rounded-xl flex w-[96px] border border-gray-200 items-stretch">
@@ -109,7 +109,7 @@
                         <label id="label-exp1" class="block font-bold mb-2 text-gray-600 text-sm">経費1</label>
                         <div class="flex items-center gap-2">
                             <div class="relative flex-1">
-                                <input type="text" inputmode="decimal" id="exp1" class="money-input w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-lg font-bold text-right pr-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all placeholder-gray-300 text-gray-800" placeholder="例: 30" data-next="exp2">
+                                <input type="text" inputmode="decimal" enterkeyhint="next" id="exp1" class="money-input w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-lg font-bold text-right pr-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all placeholder-gray-300 text-gray-800" placeholder="例: 30" data-next="exp2">
                                 <span class="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 font-bold">万</span>
                             </div>
                             <div class="bg-gray-100 p-1 rounded-xl flex w-[96px] border border-gray-200 items-stretch">
@@ -123,7 +123,7 @@
                         <label id="label-exp2" class="block font-bold mb-2 text-gray-600 text-sm">経費2</label>
                         <div class="flex items-center gap-2">
                             <div class="relative flex-1">
-                                <input type="text" inputmode="decimal" id="exp2" class="money-input w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-lg font-bold text-right pr-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all placeholder-gray-300 text-gray-800" placeholder="例: 15" data-next="exp3">
+                                <input type="text" inputmode="decimal" enterkeyhint="next" id="exp2" class="money-input w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-lg font-bold text-right pr-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all placeholder-gray-300 text-gray-800" placeholder="例: 15" data-next="exp3">
                                 <span class="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 font-bold">万</span>
                             </div>
                             <div class="bg-gray-100 p-1 rounded-xl flex w-[96px] border border-gray-200 items-stretch">
@@ -137,7 +137,7 @@
                         <label class="block font-bold mb-2 text-gray-600 text-sm">雑費・その他の経費</label>
                         <div class="flex items-center gap-2">
                             <div class="relative flex-1">
-                                <input type="text" inputmode="decimal" id="exp3" class="money-input w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-lg font-bold text-right pr-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all placeholder-gray-300 text-gray-800" placeholder="例: 5" data-next="labor">
+                                <input type="text" inputmode="decimal" enterkeyhint="next" id="exp3" class="money-input w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-lg font-bold text-right pr-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all placeholder-gray-300 text-gray-800" placeholder="例: 5" data-next="labor">
                                 <span class="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 font-bold">万</span>
                             </div>
                             <div class="bg-gray-100 p-1 rounded-xl flex w-[96px] border border-gray-200 items-stretch">
@@ -151,7 +151,7 @@
                         <label class="block font-bold mb-2 text-gray-600 text-sm">人件費（従業員・バイト等）</label>
                         <div class="flex items-center gap-2">
                             <div class="relative flex-1">
-                                <input type="text" inputmode="decimal" id="labor" class="money-input w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-lg font-bold text-right pr-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all placeholder-gray-300 text-gray-800" placeholder="※ない場合は0" data-next="rent">
+                                <input type="text" inputmode="decimal" enterkeyhint="next" id="labor" class="money-input w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-lg font-bold text-right pr-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all placeholder-gray-300 text-gray-800" placeholder="※ない場合は0" data-next="rent">
                                 <span class="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 font-bold">万</span>
                             </div>
                             <div class="bg-gray-100 p-1 rounded-xl flex w-[96px] border border-gray-200 items-stretch">
@@ -183,7 +183,7 @@
                                 <label class="block font-bold mb-2 text-gray-600 text-sm">家賃・駐車場代</label>
                                 <div class="flex items-center gap-2">
                                     <div class="relative flex-1">
-                                        <input type="text" inputmode="decimal" id="rent" class="money-input w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-lg font-bold text-right pr-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all placeholder-gray-300 text-gray-800" placeholder="例: 8" data-next="util">
+                                        <input type="text" inputmode="decimal" enterkeyhint="next" id="rent" class="money-input w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-lg font-bold text-right pr-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all placeholder-gray-300 text-gray-800" placeholder="例: 8" data-next="util">
                                         <span class="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 font-bold">万</span>
                                     </div>
                                     <div class="bg-gray-100 p-1 rounded-xl flex w-[96px] border border-gray-200 items-stretch">
@@ -196,7 +196,7 @@
                                 <label class="block font-bold mb-2 text-gray-600 text-sm">水道光熱費・通信費</label>
                                 <div class="flex items-center gap-2">
                                     <div class="relative flex-1">
-                                        <input type="text" inputmode="decimal" id="util" class="money-input w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-lg font-bold text-right pr-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all placeholder-gray-300 text-gray-800" placeholder="例: 3.5" data-next="debt_total">
+                                        <input type="text" inputmode="decimal" enterkeyhint="next" id="util" class="money-input w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-lg font-bold text-right pr-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all placeholder-gray-300 text-gray-800" placeholder="例: 3.5" data-next="debt_total">
                                         <span class="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 font-bold">万</span>
                                     </div>
                                     <div class="bg-gray-100 p-1 rounded-xl flex w-[96px] border border-gray-200 items-stretch">
@@ -216,7 +216,7 @@
                         <label class="block font-bold text-gray-600 text-sm mb-1">現在の借入残高（総額）</label>
                         <p class="text-[10px] text-gray-400 mb-2">※事業用の借金すべて</p>
                         <div class="relative">
-                            <input type="text" inputmode="decimal" id="debt_total" class="money-input w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-lg font-bold text-right pr-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all placeholder-gray-300 text-gray-800" placeholder="例: 1000" data-next="debt_monthly">
+                            <input type="text" inputmode="decimal" enterkeyhint="next" id="debt_total" class="money-input w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-lg font-bold text-right pr-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all placeholder-gray-300 text-gray-800" placeholder="例: 1000" data-next="debt_monthly">
                             <span class="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 font-bold">万</span>
                         </div>
                     </div>
@@ -226,7 +226,7 @@
                         <p class="text-[10px] text-gray-400 mb-2">※ない場合は0</p>
                         <div class="flex items-center gap-2">
                             <div class="relative flex-1">
-                                <input type="text" inputmode="decimal" id="debt_monthly" class="money-input w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-lg font-bold text-right pr-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all placeholder-gray-300 text-gray-800" placeholder="例: 11" data-next="delinquency-anchor">
+                                <input type="text" inputmode="decimal" enterkeyhint="next" id="debt_monthly" class="money-input w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-lg font-bold text-right pr-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all placeholder-gray-300 text-gray-800" placeholder="例: 11" data-next="delinquency-anchor">
                                 <span class="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 font-bold">万</span>
                             </div>
                             <div class="bg-gray-100 border border-gray-200 rounded-xl px-4 py-3 text-sm font-bold text-gray-500 flex items-center justify-center">
@@ -344,7 +344,7 @@
                         osc.start(now); osc.stop(now + 1.5);
                     }
                 } catch(e) {
-                    console.log("Audio play error"); // 音が鳴らなくても処理は止めない
+                    console.log("Audio play error");
                 }
             };
 
@@ -474,7 +474,7 @@
                     updateProgress();
                 });
 
-                // PCやAndroid向けのEnter検知 (iOSの完了ボタンはBlurで発火するため、上のfocusイベントで追従カバーする)
+                // 次へボタン・Enterキーの検知
                 input.addEventListener('keydown', (e) => {
                     if (e.key === 'Enter') {
                         e.preventDefault();
@@ -605,11 +605,11 @@
                     { html: createCard('⑥ 住民・事業税 (概算)', tax_res, true, true), sound: 'thud', delay: 4900 },
                     { html: createCard('⑦ 国保・社保料 (概算)', tax_soc, true, true), sound: 'error', delay: 5600, flash: true },
                     
-                    // 最終宣告
+                    // 最終宣告（テキスト修正済み）
                     { html: `
                         <div class="waterfall-item w-full mt-6 p-1 rounded-2xl bg-gradient-to-b ${m_net < 0 ? 'from-rose-500 to-red-700' : 'from-emerald-400 to-teal-600'}">
                             <div class="bg-slate-900 rounded-xl p-5 text-center">
-                                <p class="text-slate-300 text-sm font-bold mb-2">あなたが自由に使える【手残り現金】</p>
+                                <p class="text-slate-300 text-sm font-bold mb-2">あなたが自由に使える【月間の手残り現金】</p>
                                 <p class="text-5xl font-black ${m_net < 0 ? 'text-rose-500' : 'text-emerald-400'}">${round1(m_net).toLocaleString()}<span class="text-lg ml-1">万円</span></p>
                             </div>
                         </div>
