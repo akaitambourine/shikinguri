@@ -38,6 +38,23 @@
             transform: scale(0.92);
             transition: all 0.05s;
         }
+
+        /* 押すのを促す強烈な波紋アニメーション */
+        @keyframes ring-pulse {
+            0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.6); }
+            100% { box-shadow: 0 0 0 12px rgba(59, 130, 246, 0); }
+        }
+        .urge-action {
+            animation: ring-pulse 1.2s infinite;
+            border-color: #3b82f6 !important;
+            color: #3b82f6 !important;
+            background-color: #eff6ff !important;
+        }
+        .urge-action-solid {
+            animation: ring-pulse 1.2s infinite;
+            background-color: #3b82f6 !important;
+            color: #ffffff !important;
+        }
     </style>
 </head>
 <body class="bg-gray-100 text-gray-800 font-sans pb-32 transition-colors duration-700" id="body">
@@ -112,9 +129,9 @@
                             <input type="text" inputmode="decimal" id="sales" class="money-input w-full bg-transparent px-4 py-3 text-xl font-black text-right outline-none text-gray-800" placeholder="例: 150.5">
                             <span class="text-gray-500 font-bold pr-4">万</span>
                         </div>
-                        <div class="flex gap-1 shrink-0 ml-2">
-                            <button type="button" class="period-btn w-12 h-12 rounded-xl text-sm font-bold border-2 border-gray-200 text-gray-400 bg-white transition-all disabled:opacity-50" data-target="sales" data-val="month" disabled>月</button>
-                            <button type="button" class="period-btn w-12 h-12 rounded-xl text-sm font-bold border-2 border-gray-200 text-gray-400 bg-white transition-all disabled:opacity-50" data-target="sales" data-val="year" disabled>年</button>
+                        <div class="flex gap-1.5 shrink-0 ml-2">
+                            <button type="button" class="period-btn w-12 h-12 rounded-xl text-sm font-bold border-2 border-gray-200 text-gray-400 bg-white transition-all disabled:opacity-40" data-target="sales" data-val="month" disabled>月</button>
+                            <button type="button" class="period-btn w-12 h-12 rounded-xl text-sm font-bold border-2 border-gray-200 text-gray-400 bg-white transition-all disabled:opacity-40" data-target="sales" data-val="year" disabled>年</button>
                         </div>
                     </div>
                 </div>
@@ -129,9 +146,9 @@
                                 <input type="text" inputmode="decimal" id="exp1" class="money-input w-full bg-transparent px-4 py-3 text-lg font-bold text-right outline-none text-gray-800" placeholder="例: 30">
                                 <span class="text-gray-500 font-bold pr-4">万</span>
                             </div>
-                            <div class="flex gap-1 shrink-0 ml-2">
-                                <button type="button" class="period-btn w-12 h-12 rounded-xl text-sm font-bold border-2 border-gray-200 text-gray-400 bg-white transition-all disabled:opacity-50" data-target="exp1" data-val="month" disabled>月</button>
-                                <button type="button" class="period-btn w-12 h-12 rounded-xl text-sm font-bold border-2 border-gray-200 text-gray-400 bg-white transition-all disabled:opacity-50" data-target="exp1" data-val="year" disabled>年</button>
+                            <div class="flex gap-1.5 shrink-0 ml-2">
+                                <button type="button" class="period-btn w-12 h-12 rounded-xl text-sm font-bold border-2 border-gray-200 text-gray-400 bg-white transition-all disabled:opacity-40" data-target="exp1" data-val="month" disabled>月</button>
+                                <button type="button" class="period-btn w-12 h-12 rounded-xl text-sm font-bold border-2 border-gray-200 text-gray-400 bg-white transition-all disabled:opacity-40" data-target="exp1" data-val="year" disabled>年</button>
                             </div>
                         </div>
                     </div>
@@ -143,9 +160,9 @@
                                 <input type="text" inputmode="decimal" id="exp2" class="money-input w-full bg-transparent px-4 py-3 text-lg font-bold text-right outline-none text-gray-800" placeholder="例: 15">
                                 <span class="text-gray-500 font-bold pr-4">万</span>
                             </div>
-                            <div class="flex gap-1 shrink-0 ml-2">
-                                <button type="button" class="period-btn w-12 h-12 rounded-xl text-sm font-bold border-2 border-gray-200 text-gray-400 bg-white transition-all disabled:opacity-50" data-target="exp2" data-val="month" disabled>月</button>
-                                <button type="button" class="period-btn w-12 h-12 rounded-xl text-sm font-bold border-2 border-gray-200 text-gray-400 bg-white transition-all disabled:opacity-50" data-target="exp2" data-val="year" disabled>年</button>
+                            <div class="flex gap-1.5 shrink-0 ml-2">
+                                <button type="button" class="period-btn w-12 h-12 rounded-xl text-sm font-bold border-2 border-gray-200 text-gray-400 bg-white transition-all disabled:opacity-40" data-target="exp2" data-val="month" disabled>月</button>
+                                <button type="button" class="period-btn w-12 h-12 rounded-xl text-sm font-bold border-2 border-gray-200 text-gray-400 bg-white transition-all disabled:opacity-40" data-target="exp2" data-val="year" disabled>年</button>
                             </div>
                         </div>
                     </div>
@@ -157,9 +174,9 @@
                                 <input type="text" inputmode="decimal" id="exp3" class="money-input w-full bg-transparent px-4 py-3 text-lg font-bold text-right outline-none text-gray-800" placeholder="例: 5">
                                 <span class="text-gray-500 font-bold pr-4">万</span>
                             </div>
-                            <div class="flex gap-1 shrink-0 ml-2">
-                                <button type="button" class="period-btn w-12 h-12 rounded-xl text-sm font-bold border-2 border-gray-200 text-gray-400 bg-white transition-all disabled:opacity-50" data-target="exp3" data-val="month" disabled>月</button>
-                                <button type="button" class="period-btn w-12 h-12 rounded-xl text-sm font-bold border-2 border-gray-200 text-gray-400 bg-white transition-all disabled:opacity-50" data-target="exp3" data-val="year" disabled>年</button>
+                            <div class="flex gap-1.5 shrink-0 ml-2">
+                                <button type="button" class="period-btn w-12 h-12 rounded-xl text-sm font-bold border-2 border-gray-200 text-gray-400 bg-white transition-all disabled:opacity-40" data-target="exp3" data-val="month" disabled>月</button>
+                                <button type="button" class="period-btn w-12 h-12 rounded-xl text-sm font-bold border-2 border-gray-200 text-gray-400 bg-white transition-all disabled:opacity-40" data-target="exp3" data-val="year" disabled>年</button>
                             </div>
                         </div>
                     </div>
@@ -171,9 +188,9 @@
                                 <input type="text" inputmode="decimal" id="labor" class="money-input w-full bg-transparent px-4 py-3 text-lg font-bold text-right outline-none text-gray-800" placeholder="※ない場合は0">
                                 <span class="text-gray-500 font-bold pr-4">万</span>
                             </div>
-                            <div class="flex gap-1 shrink-0 ml-2">
-                                <button type="button" class="period-btn w-12 h-12 rounded-xl text-sm font-bold border-2 border-gray-200 text-gray-400 bg-white transition-all disabled:opacity-50" data-target="labor" data-val="month" disabled>月</button>
-                                <button type="button" class="period-btn w-12 h-12 rounded-xl text-sm font-bold border-2 border-gray-200 text-gray-400 bg-white transition-all disabled:opacity-50" data-target="labor" data-val="year" disabled>年</button>
+                            <div class="flex gap-1.5 shrink-0 ml-2">
+                                <button type="button" class="period-btn w-12 h-12 rounded-xl text-sm font-bold border-2 border-gray-200 text-gray-400 bg-white transition-all disabled:opacity-40" data-target="labor" data-val="month" disabled>月</button>
+                                <button type="button" class="period-btn w-12 h-12 rounded-xl text-sm font-bold border-2 border-gray-200 text-gray-400 bg-white transition-all disabled:opacity-40" data-target="labor" data-val="year" disabled>年</button>
                             </div>
                         </div>
                     </div>
@@ -203,9 +220,9 @@
                                         <input type="text" inputmode="decimal" id="rent" class="money-input w-full bg-transparent px-4 py-3 text-lg font-bold text-right outline-none text-gray-800" placeholder="例: 8">
                                         <span class="text-gray-500 font-bold pr-4">万</span>
                                     </div>
-                                    <div class="flex gap-1 shrink-0 ml-2">
-                                        <button type="button" class="period-btn w-12 h-12 rounded-xl text-sm font-bold border-2 border-gray-200 text-gray-400 bg-white transition-all disabled:opacity-50" data-target="rent" data-val="month" disabled>月</button>
-                                        <button type="button" class="period-btn w-12 h-12 rounded-xl text-sm font-bold border-2 border-gray-200 text-gray-400 bg-white transition-all disabled:opacity-50" data-target="rent" data-val="year" disabled>年</button>
+                                    <div class="flex gap-1.5 shrink-0 ml-2">
+                                        <button type="button" class="period-btn w-12 h-12 rounded-xl text-sm font-bold border-2 border-gray-200 text-gray-400 bg-white transition-all disabled:opacity-40" data-target="rent" data-val="month" disabled>月</button>
+                                        <button type="button" class="period-btn w-12 h-12 rounded-xl text-sm font-bold border-2 border-gray-200 text-gray-400 bg-white transition-all disabled:opacity-40" data-target="rent" data-val="year" disabled>年</button>
                                     </div>
                                 </div>
                             </div>
@@ -216,9 +233,9 @@
                                         <input type="text" inputmode="decimal" id="util" class="money-input w-full bg-transparent px-4 py-3 text-lg font-bold text-right outline-none text-gray-800" placeholder="例: 3.5">
                                         <span class="text-gray-500 font-bold pr-4">万</span>
                                     </div>
-                                    <div class="flex gap-1 shrink-0 ml-2">
-                                        <button type="button" class="period-btn w-12 h-12 rounded-xl text-sm font-bold border-2 border-gray-200 text-gray-400 bg-white transition-all disabled:opacity-50" data-target="util" data-val="month" disabled>月</button>
-                                        <button type="button" class="period-btn w-12 h-12 rounded-xl text-sm font-bold border-2 border-gray-200 text-gray-400 bg-white transition-all disabled:opacity-50" data-target="util" data-val="year" disabled>年</button>
+                                    <div class="flex gap-1.5 shrink-0 ml-2">
+                                        <button type="button" class="period-btn w-12 h-12 rounded-xl text-sm font-bold border-2 border-gray-200 text-gray-400 bg-white transition-all disabled:opacity-40" data-target="util" data-val="month" disabled>月</button>
+                                        <button type="button" class="period-btn w-12 h-12 rounded-xl text-sm font-bold border-2 border-gray-200 text-gray-400 bg-white transition-all disabled:opacity-40" data-target="util" data-val="year" disabled>年</button>
                                     </div>
                                 </div>
                             </div>
@@ -237,8 +254,8 @@
                                 <input type="text" inputmode="decimal" id="debt_total" class="money-input w-full bg-transparent px-4 py-3 text-lg font-bold text-right outline-none text-gray-800" placeholder="例: 1000">
                                 <span class="text-gray-500 font-bold pr-4">万</span>
                             </div>
-                            <div class="flex gap-1 shrink-0 ml-2">
-                                <button type="button" class="action-next-btn w-16 h-12 rounded-xl text-sm font-bold bg-gray-300 text-white transition-all disabled:opacity-50" data-target="debt_total" disabled>次へ</button>
+                            <div class="flex gap-1.5 shrink-0 ml-2">
+                                <button type="button" class="action-next-btn w-16 h-12 rounded-xl text-sm font-bold bg-gray-300 text-white transition-all disabled:opacity-40" data-target="debt_total" disabled>次へ</button>
                             </div>
                         </div>
                     </div>
@@ -251,8 +268,8 @@
                                 <input type="text" inputmode="decimal" id="debt_monthly" class="money-input w-full bg-transparent px-4 py-3 text-lg font-bold text-right outline-none text-gray-800" placeholder="例: 11">
                                 <span class="text-gray-500 font-bold pr-4">万</span>
                             </div>
-                            <div class="flex gap-1 shrink-0 ml-2">
-                                <button type="button" class="action-next-btn w-16 h-12 rounded-xl text-sm font-bold bg-gray-300 text-white transition-all disabled:opacity-50" data-target="debt_monthly" disabled>完了</button>
+                            <div class="flex gap-1.5 shrink-0 ml-2">
+                                <button type="button" class="action-next-btn w-16 h-12 rounded-xl text-sm font-bold bg-gray-300 text-white transition-all disabled:opacity-40" data-target="debt_monthly" disabled>完了</button>
                             </div>
                         </div>
                     </div>
@@ -300,7 +317,6 @@
                 sales: '', exp1: '', exp2: '', exp3: '', labor: '',
                 hasRent: false, rent: '', util: '',
                 debt_total: '', debt_monthly: '',
-                // ★ 初期状態をnullにして、どちらも選ばれていない状態からスタート ★
                 salesPeriod: null, exp1Period: null, exp2Period: null, exp3Period: null, 
                 laborPeriod: null, rentPeriod: null, utilPeriod: null
             };
@@ -380,7 +396,6 @@
 
             const advanceToNext = (nextId) => {
                 if (!nextId) return;
-                
                 let targetId = nextId;
                 if (nextId === 'rent-or-debt') targetId = state.hasRent ? 'rent' : 'debt_total';
                 else if (nextId === 'util-or-debt') targetId = state.hasRent ? 'util' : 'debt_total';
@@ -485,17 +500,16 @@
                     state.util = ''; document.getElementById('util').value = '';
                     state.rentPeriod = null; state.utilPeriod = null;
                     
-                    // リセットしてロック
                     document.querySelectorAll(`.period-btn[data-target="rent"], .period-btn[data-target="util"]`).forEach(b => {
                         b.disabled = true;
-                        b.classList.remove('border-blue-400', 'border-blue-500', 'text-blue-500', 'text-blue-600', 'bg-blue-50', 'animate-pulse');
+                        b.classList.remove('border-blue-500', 'text-blue-600', 'bg-blue-50', 'urge-action');
                         b.classList.add('border-gray-200', 'text-gray-400');
                     });
                 }
                 updateProgress();
             });
 
-            // ★ 数字入力時にボタンを青く光らせてアピールする ★
+            // ★ 数字入力時に強烈な「押してね波紋アニメ（urge-action）」を発動 ★
             moneyInputs.forEach(input => {
                 input.addEventListener('input', (e) => {
                     let val = e.target.value.replace(/[０-９．]/g, s => String.fromCharCode(s.charCodeAt(0) - 0xFEE0)).replace(/[^0-9.]/g, '');
@@ -508,51 +522,44 @@
                     const targetId = e.target.id;
 
                     if (targetId !== 'debt_total' && targetId !== 'debt_monthly') {
-                        // 月/年ボタンの制御
                         document.querySelectorAll(`.period-btn[data-target="${targetId}"]`).forEach(btn => {
                             btn.disabled = !hasValue;
                             if (hasValue) {
                                 if (state[`${targetId}Period`] === null) {
-                                    // どちらも選ばれていない時は両方を光らせて促す
-                                    btn.classList.add('border-blue-400', 'text-blue-500', 'animate-pulse');
+                                    btn.classList.add('urge-action');
                                     btn.classList.remove('border-gray-200', 'text-gray-400', 'bg-blue-50', 'border-blue-500', 'text-blue-600');
                                 } else {
-                                    // すでにどちらかが選ばれている状態
                                     const isCurrentPeriod = btn.dataset.val === state[`${targetId}Period`];
-                                    btn.classList.remove('animate-pulse', 'border-blue-400');
+                                    btn.classList.remove('urge-action');
                                     if (isCurrentPeriod) {
                                         btn.classList.add('border-blue-500', 'text-blue-600', 'bg-blue-50');
-                                        btn.classList.remove('border-gray-200', 'text-gray-400', 'text-blue-500');
+                                        btn.classList.remove('border-gray-200', 'text-gray-400');
                                     } else {
-                                        btn.classList.remove('border-blue-500', 'text-blue-600', 'bg-blue-50', 'text-blue-500');
+                                        btn.classList.remove('border-blue-500', 'text-blue-600', 'bg-blue-50');
                                         btn.classList.add('border-gray-200', 'text-gray-400');
                                     }
                                 }
                             } else {
-                                // 空欄になったら元に戻す
-                                btn.classList.remove('border-blue-500', 'text-blue-600', 'bg-blue-50', 'animate-pulse', 'border-blue-400', 'text-blue-500');
+                                btn.classList.remove('border-blue-500', 'text-blue-600', 'bg-blue-50', 'urge-action');
                                 btn.classList.add('border-gray-200', 'text-gray-400');
                                 state[`${targetId}Period`] = null; 
                             }
                         });
                     } else {
-                        // 借金の次へ/完了ボタンの制御
                         document.querySelectorAll(`.action-next-btn[data-target="${targetId}"]`).forEach(btn => {
                             btn.disabled = !hasValue;
                             if (hasValue) {
-                                btn.classList.add('bg-blue-500', 'animate-pulse');
+                                btn.classList.add('urge-action-solid');
                                 btn.classList.remove('bg-gray-300');
                             } else {
-                                btn.classList.remove('bg-blue-500', 'animate-pulse');
+                                btn.classList.remove('urge-action-solid');
                                 btn.classList.add('bg-gray-300');
                             }
                         });
                     }
-
                     updateProgress();
                 });
 
-                // Enterキーで進んだ場合は、選ばれていなければ強制的に「月」を選択したことにする
                 input.addEventListener('keydown', (e) => {
                     if (e.key === 'Enter') {
                         e.preventDefault();
@@ -561,7 +568,7 @@
                         if (targetId !== 'debt_total' && targetId !== 'debt_monthly' && state[`${targetId}Period`] === null && input.value.length > 0) {
                             state[`${targetId}Period`] = 'month';
                             document.querySelectorAll(`.period-btn[data-target="${targetId}"]`).forEach(b => {
-                                b.classList.remove('animate-pulse', 'border-blue-400', 'text-blue-500');
+                                b.classList.remove('urge-action');
                                 if (b.dataset.val === 'month') {
                                     b.classList.add('border-blue-500', 'text-blue-600', 'bg-blue-50');
                                     b.classList.remove('border-gray-200', 'text-gray-400');
@@ -571,30 +578,33 @@
                             });
                         }
 
-                        const nextId = input.dataset.next;
-                        let jumpId = nextId;
-                        if (nextId === 'rent-or-debt') jumpId = state.hasRent ? 'rent' : 'debt_total';
-                        else if (nextId === 'util-or-debt') jumpId = state.hasRent ? 'util' : 'debt_total';
-                        advanceToNext(jumpId);
+                        let nextId = '';
+                        if (targetId === 'sales') nextId = 'exp1';
+                        if (targetId === 'exp1') nextId = 'exp2';
+                        if (targetId === 'exp2') nextId = 'exp3';
+                        if (targetId === 'exp3') nextId = 'labor';
+                        if (targetId === 'labor') nextId = 'rent-or-debt';
+                        if (targetId === 'rent') nextId = 'util';
+                        if (targetId === 'util') nextId = 'debt_total';
+                        if (targetId === 'debt_total') nextId = 'debt_monthly';
+                        if (targetId === 'debt_monthly') nextId = 'delinquency-anchor';
+
+                        advanceToNext(nextId);
                     }
                 });
             });
 
-            // ★ ボタンを押した時の処理（押した方が青く固定され、次へ進む） ★
+            // ★ ボタンが押されたら波紋アニメを消して固定する ★
             document.querySelectorAll('.period-btn').forEach(btn => {
-                // タッチ無効化の小細工を削除！自然なクリックイベントを使います。
                 btn.addEventListener('click', (e) => {
                     if(btn.disabled) return;
                     
                     const targetId = btn.dataset.target;
                     const val = btn.dataset.val;
-                    
-                    // 状態を更新
                     state[`${targetId}Period`] = val;
 
-                    // 押されたボタンを青で固定、もう片方をグレーに。パルスは消す。
                     document.querySelectorAll(`.period-btn[data-target="${targetId}"]`).forEach(b => {
-                        b.classList.remove('animate-pulse', 'border-blue-400', 'text-blue-500');
+                        b.classList.remove('urge-action');
                         if (b.dataset.val === val) {
                             b.classList.add('border-blue-500', 'text-blue-600', 'bg-blue-50');
                             b.classList.remove('border-gray-200', 'text-gray-400');
@@ -604,8 +614,6 @@
                         }
                     });
 
-                    // 次へ進む
-                    const inputEl = document.getElementById(targetId);
                     let nextId = '';
                     if (targetId === 'sales') nextId = 'exp1';
                     if (targetId === 'exp1') nextId = 'exp2';
@@ -621,7 +629,7 @@
             document.querySelectorAll('.action-next-btn').forEach(btn => {
                 btn.addEventListener('click', (e) => {
                     if(btn.disabled) return;
-                    btn.classList.remove('animate-pulse');
+                    btn.classList.remove('urge-action-solid');
 
                     const targetId = btn.dataset.target;
                     let nextId = '';
@@ -632,7 +640,7 @@
             });
 
             // ==============================================
-            // 診断実行 ＆ 絶望アニメーション
+            // 診断実行 ＆ 絶望アニメーション（バグ完全修正済）
             // ==============================================
             btnSubmit.addEventListener('click', () => {
                 document.activeElement.blur(); 
@@ -642,7 +650,7 @@
                     if(audioCtx.state === 'suspended') audioCtx.resume();
                 } catch(e){}
 
-                // 空欄やエラー時にNaNにならないように厳格化
+                // ★ 空欄やエラー時にNaNにならないように厳格化 ★
                 const getMonthly = (valStr, period) => {
                     const num = parseFloat(valStr);
                     if (isNaN(num)) return 0;
@@ -741,9 +749,12 @@
                         setTimeout(() => {
                             const div = document.createElement('div');
                             div.innerHTML = item.html;
-                            waterfall.appendChild(div.firstElementChild);
+                            // ★バグ修正：要素を変数に格納してからappendする★
+                            const el = div.firstElementChild;
+                            waterfall.appendChild(el);
+                            
                             requestAnimationFrame(() => {
-                                div.firstElementChild.classList.add('show');
+                                el.classList.add('show');
                                 playSound(item.sound);
                                 if (item.flash) document.getElementById('body').classList.add('flash-danger');
                             });
