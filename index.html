@@ -34,8 +34,8 @@
         }
 
         /* 押した瞬間にへこむアクション */
-        .period-btn:active, .action-next-btn:active {
-            transform: scale(0.92);
+        .period-btn:active, .action-next-btn:active, #btn-start:active, .q-btn:active, #btn-submit:active {
+            transform: scale(0.95);
             transition: all 0.05s;
         }
 
@@ -44,11 +44,9 @@
             0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4); }
             100% { box-shadow: 0 0 0 10px rgba(59, 130, 246, 0); }
         }
-        /* 月/年ボタン用（色はグレーのままで波紋だけ出す） */
         .urge-action {
             animation: ring-pulse 1.5s infinite;
         }
-        /* 次へ/完了ボタン用 */
         .urge-action-solid {
             animation: ring-pulse 1.5s infinite;
             background-color: #3b82f6 !important;
@@ -79,7 +77,7 @@
                     <span class="text-blue-500 text-xl mr-3">✅</span> 最適な「資金繰り対策」が分かる
                 </li>
             </ul>
-            <button type="button" id="btn-start" class="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold text-lg py-4 rounded-xl shadow-[0_10px_20px_-5px_rgba(59,130,246,0.4)] flex items-center justify-center active:scale-95 transition-transform">
+            <button type="button" id="btn-start" class="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold text-lg py-4 rounded-xl shadow-[0_10px_20px_-5px_rgba(59,130,246,0.4)] flex items-center justify-center transition-transform">
                 無料診断をスタート <span class="ml-2">🚀</span>
             </button>
             <p class="text-center text-[10px] text-gray-400 mt-4">※シミュレーション結果は概算の目安です</p>
@@ -109,13 +107,13 @@
                         <span class="bg-blue-100 text-blue-700 text-xs py-1 px-2.5 rounded-md mr-2 font-black">Q1</span>あなたの業種は？
                     </h2>
                     <div class="grid grid-cols-2 gap-2" id="q1-group">
-                        <button type="button" class="q-btn text-left px-3 py-3 rounded-xl border-2 border-gray-100 bg-gray-50 text-gray-600 text-sm font-medium hover:bg-gray-100 transition-colors active:scale-[0.98]" data-q="q1" data-val="1">👷 建設・一人親方</button>
-                        <button type="button" class="q-btn text-left px-3 py-3 rounded-xl border-2 border-gray-100 bg-gray-50 text-gray-600 text-sm font-medium hover:bg-gray-100 transition-colors active:scale-[0.98]" data-q="q1" data-val="2">🍳 飲食店・カフェ</button>
-                        <button type="button" class="q-btn text-left px-3 py-3 rounded-xl border-2 border-gray-100 bg-gray-50 text-gray-600 text-sm font-medium hover:bg-gray-100 transition-colors active:scale-[0.98]" data-q="q1" data-val="3">✂️ 美容・サロン</button>
-                        <button type="button" class="q-btn text-left px-3 py-3 rounded-xl border-2 border-gray-100 bg-gray-50 text-gray-600 text-sm font-medium hover:bg-gray-100 transition-colors active:scale-[0.98]" data-q="q1" data-val="4">📦 小売・EC</button>
-                        <button type="button" class="q-btn text-left px-3 py-3 rounded-xl border-2 border-gray-100 bg-gray-50 text-gray-600 text-sm font-medium hover:bg-gray-100 transition-colors active:scale-[0.98]" data-q="q1" data-val="5">🚚 軽貨物</button>
-                        <button type="button" class="q-btn text-left px-3 py-3 rounded-xl border-2 border-gray-100 bg-gray-50 text-gray-600 text-sm font-medium hover:bg-gray-100 transition-colors active:scale-[0.98]" data-q="q1" data-val="6">💻 IT・フリー</button>
-                        <button type="button" class="q-btn col-span-2 text-center px-4 py-3.5 rounded-xl border-2 border-gray-100 bg-gray-50 text-gray-600 font-medium hover:bg-gray-100 transition-colors active:scale-[0.98]" data-q="q1" data-val="7">📁 その他</button>
+                        <button type="button" class="q-btn text-left px-3 py-3 rounded-xl border-2 border-gray-100 bg-gray-50 text-gray-600 text-sm font-medium hover:bg-gray-100 transition-colors" data-q="q1" data-val="1">👷 建設・一人親方</button>
+                        <button type="button" class="q-btn text-left px-3 py-3 rounded-xl border-2 border-gray-100 bg-gray-50 text-gray-600 text-sm font-medium hover:bg-gray-100 transition-colors" data-q="q1" data-val="2">🍳 飲食店・カフェ</button>
+                        <button type="button" class="q-btn text-left px-3 py-3 rounded-xl border-2 border-gray-100 bg-gray-50 text-gray-600 text-sm font-medium hover:bg-gray-100 transition-colors" data-q="q1" data-val="3">✂️ 美容・サロン</button>
+                        <button type="button" class="q-btn text-left px-3 py-3 rounded-xl border-2 border-gray-100 bg-gray-50 text-gray-600 text-sm font-medium hover:bg-gray-100 transition-colors" data-q="q1" data-val="4">📦 小売・EC</button>
+                        <button type="button" class="q-btn text-left px-3 py-3 rounded-xl border-2 border-gray-100 bg-gray-50 text-gray-600 text-sm font-medium hover:bg-gray-100 transition-colors" data-q="q1" data-val="5">🚚 軽貨物</button>
+                        <button type="button" class="q-btn text-left px-3 py-3 rounded-xl border-2 border-gray-100 bg-gray-50 text-gray-600 text-sm font-medium hover:bg-gray-100 transition-colors" data-q="q1" data-val="6">💻 IT・フリー</button>
+                        <button type="button" class="q-btn col-span-2 text-center px-4 py-3.5 rounded-xl border-2 border-gray-100 bg-gray-50 text-gray-600 font-medium hover:bg-gray-100 transition-colors" data-q="q1" data-val="7">📁 その他</button>
                     </div>
                 </div>
 
@@ -124,9 +122,9 @@
                         <span class="bg-blue-100 text-blue-700 text-xs py-1 px-2.5 rounded-md mr-2 font-black">Q2</span>申告スタイルは？
                     </h2>
                     <div class="grid grid-cols-3 gap-2" id="q2-group">
-                        <button type="button" class="q-btn text-center px-1 py-3.5 rounded-xl border-2 border-gray-100 bg-gray-50 text-gray-600 text-xs font-bold transition-colors active:scale-[0.98]" data-q="q2" data-val="white">個人(白色)</button>
-                        <button type="button" class="q-btn text-center px-1 py-3.5 rounded-xl border-2 border-gray-100 bg-gray-50 text-gray-600 text-xs font-bold transition-colors active:scale-[0.98]" data-q="q2" data-val="blue">個人(青色)</button>
-                        <button type="button" class="q-btn text-center px-1 py-3.5 rounded-xl border-2 border-gray-100 bg-gray-50 text-gray-600 text-xs font-bold transition-colors active:scale-[0.98]" data-q="q2" data-val="corp">法人</button>
+                        <button type="button" class="q-btn text-center px-1 py-3.5 rounded-xl border-2 border-gray-100 bg-gray-50 text-gray-600 text-xs font-bold transition-colors" data-q="q2" data-val="white">個人(白色)</button>
+                        <button type="button" class="q-btn text-center px-1 py-3.5 rounded-xl border-2 border-gray-100 bg-gray-50 text-gray-600 text-xs font-bold transition-colors" data-q="q2" data-val="blue">個人(青色)</button>
+                        <button type="button" class="q-btn text-center px-1 py-3.5 rounded-xl border-2 border-gray-100 bg-gray-50 text-gray-600 text-xs font-bold transition-colors" data-q="q2" data-val="corp">法人</button>
                     </div>
                 </div>
 
@@ -135,8 +133,8 @@
                         <span class="bg-blue-100 text-blue-700 text-xs py-1 px-2.5 rounded-md mr-2 font-black">Q3</span>インボイスに登録してる？
                     </h2>
                     <div class="grid grid-cols-2 gap-2" id="q3-group">
-                        <button type="button" class="q-btn text-center px-2 py-4 rounded-xl border-2 border-gray-100 bg-gray-50 text-gray-600 text-sm font-bold transition-colors active:scale-[0.98]" data-q="q3" data-val="no">未登録(免税)</button>
-                        <button type="button" class="q-btn text-center px-2 py-4 rounded-xl border-2 border-gray-100 bg-gray-50 text-gray-600 text-sm font-bold transition-colors active:scale-[0.98]" data-q="q3" data-val="yes">登録済(課税)</button>
+                        <button type="button" class="q-btn text-center px-2 py-4 rounded-xl border-2 border-gray-100 bg-gray-50 text-gray-600 text-sm font-bold transition-colors" data-q="q3" data-val="no">未登録(免税)</button>
+                        <button type="button" class="q-btn text-center px-2 py-4 rounded-xl border-2 border-gray-100 bg-gray-50 text-gray-600 text-sm font-bold transition-colors" data-q="q3" data-val="yes">登録済(課税)</button>
                     </div>
                 </div>
             </div>
@@ -292,7 +290,8 @@
 
                     <div class="scroll-anchor" id="section-debt-monthly">
                         <label class="block font-bold text-gray-600 text-sm mb-1">毎月の返済額（元金）</label>
-                        <div class="flex items-center mt-3">
+                        <p class="text-[10px] text-gray-400 mb-2">※ない場合は空欄でOK</p>
+                        <div class="flex items-center">
                             <div class="relative flex-1 flex items-center bg-gray-50 border border-gray-200 rounded-xl transition-all shadow-inner input-group-focus overflow-hidden">
                                 <input type="text" inputmode="decimal" id="debt_monthly" class="money-input w-full bg-transparent px-4 py-3 text-lg font-bold text-right outline-none text-gray-800" placeholder="例: 11" data-next="delinquency-anchor">
                                 <span class="text-gray-500 font-bold pr-4">万</span>
@@ -314,10 +313,10 @@
             </form>
         </main>
 
-        <footer id="footer-submit" class="fixed bottom-0 w-full z-40 left-0 right-0 mx-auto max-w-md pointer-events-none">
+        <footer id="footer-submit" class="fixed bottom-0 w-full z-40 left-0 right-0 mx-auto max-w-md">
             <div class="px-4 py-4 relative">
-                <div id="submit-btn-wrapper" class="transform translate-y-full opacity-0 pointer-events-none transition-all duration-500 ease-out hidden">
-                    <button type="button" id="btn-submit" class="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold text-lg py-4 rounded-xl shadow-[0_10px_20px_-5px_rgba(59,130,246,0.4)] transform active:scale-95 transition-transform flex items-center justify-center">
+                <div id="submit-btn-wrapper" class="transform translate-y-full opacity-0 transition-all duration-500 ease-out hidden">
+                    <button type="button" id="btn-submit" class="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold text-lg py-4 rounded-xl shadow-[0_10px_20px_-5px_rgba(59,130,246,0.4)] flex items-center justify-center transition-transform">
                         <span class="mr-2 text-xl">✨</span> 診断する
                     </button>
                 </div>
@@ -368,11 +367,10 @@
             const submitBtnWrapper = document.getElementById('submit-btn-wrapper');
             const btnSubmit = document.getElementById('btn-submit');
             
-            // --- スタート画面の制御 ---
+            // --- スタート画面 ---
             document.getElementById('btn-start').addEventListener('click', () => {
                 const startView = document.getElementById('view-start');
                 const formView = document.getElementById('view-form');
-                
                 startView.classList.add('opacity-0');
                 setTimeout(() => {
                     startView.classList.add('hidden');
@@ -420,7 +418,6 @@
                 } catch(e) {}
             };
 
-            // --- スクロール制御 ---
             const scrollToElement = (elementId) => {
                 const el = document.getElementById(elementId);
                 if (el) {
@@ -438,20 +435,17 @@
                 });
             });
 
-            // ★ 次へ進むロジック（家賃トグルでの停止機能付き） ★
             const advanceToNext = (nextId) => {
                 if (!nextId) return;
                 
                 if (nextId === 'rent-toggle-box') {
                     scrollToElement('section-rent');
-                    document.activeElement.blur(); // トグルの前でキーボードを閉じて見せる
+                    document.activeElement.blur(); 
                     return;
                 }
 
                 let targetId = nextId;
-                if (nextId === 'util-or-debt') {
-                    targetId = state.hasRent ? 'util' : 'debt_total';
-                }
+                if (nextId === 'util-or-debt') targetId = state.hasRent ? 'util' : 'debt_total';
 
                 if (targetId === 'rent') { scrollToElement('sub-rent'); document.getElementById('rent').focus(); }
                 else if (targetId === 'util') { scrollToElement('sub-util'); document.getElementById('util').focus(); }
@@ -464,11 +458,8 @@
                 }
             };
 
-            // ★ カウンター表示制御（必須は4問のみ） ★
             const updateProgress = () => {
-                // 金額入力は任意（空欄可）なので必須リストから外す
                 const required = ['q1', 'q2', 'q3', 'delinquency'];
-
                 const filledCount = required.filter(key => state[key] !== null).length;
                 const remaining = required.length - filledCount;
                 
@@ -498,7 +489,6 @@
                 }
             };
 
-            // --- Q1〜Q3・家賃トグルイベント ---
             qBtns.forEach(btn => {
                 btn.addEventListener('click', () => {
                     const q = btn.dataset.q;
@@ -558,7 +548,6 @@
                 updateProgress();
             });
 
-            // ★ 数字入力時の波紋アニメ（色はグレーのまま） ★
             moneyInputs.forEach(input => {
                 input.addEventListener('input', (e) => {
                     let val = e.target.value.replace(/[０-９．]/g, s => String.fromCharCode(s.charCodeAt(0) - 0xFEE0)).replace(/[^0-9.]/g, '');
@@ -598,7 +587,6 @@
                     updateProgress();
                 });
 
-                // Enterキーで進んだ場合（未入力でも強制的に月にして進む）
                 input.addEventListener('keydown', (e) => {
                     if (e.key === 'Enter') {
                         e.preventDefault();
@@ -622,7 +610,6 @@
                 });
             });
 
-            // ★ ボタンが押されたら波紋アニメを消して色を固定する ★
             document.querySelectorAll('.period-btn').forEach(btn => {
                 btn.addEventListener('click', (e) => {
                     const targetId = btn.dataset.target;
@@ -630,7 +617,7 @@
                     state[`${targetId}Period`] = val;
 
                     document.querySelectorAll(`.period-btn[data-target="${targetId}"]`).forEach(b => {
-                        b.classList.remove('urge-action'); // ここで波紋を消す
+                        b.classList.remove('urge-action');
                         if (b.dataset.val === val) {
                             b.classList.add('border-blue-500', 'text-blue-600', 'bg-blue-50');
                             b.classList.remove('border-gray-200', 'text-gray-400');
@@ -640,7 +627,6 @@
                         }
                     });
 
-                    // ボタン自身のdata-nextは無いので、親のinputから取得して進む
                     const inputEl = document.getElementById(targetId);
                     if(inputEl) advanceToNext(inputEl.dataset.next);
                 });
@@ -666,7 +652,6 @@
                     if(audioCtx.state === 'suspended') audioCtx.resume();
                 } catch(e){}
 
-                // 空欄やエラー時にNaNにならないように厳格化
                 const getMonthly = (valStr, period) => {
                     if (!valStr || valStr.trim() === '') return 0;
                     const num = parseFloat(valStr);
