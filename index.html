@@ -39,17 +39,16 @@
             transition: all 0.05s;
         }
 
-        /* ★ 押すのを促す強烈な波紋アニメーション ★ */
+        /* 波紋アニメーション */
         @keyframes ring-pulse {
             0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4); }
             100% { box-shadow: 0 0 0 10px rgba(59, 130, 246, 0); }
         }
+        /* 月/年ボタン用（色はグレーのままで波紋だけ出す） */
         .urge-action {
             animation: ring-pulse 1.5s infinite;
-            border-color: #60a5fa !important;
-            color: #3b82f6 !important;
-            background-color: #ffffff !important; /* 背景は白のまま（選択済みっぽさを消す） */
         }
+        /* 次へ/完了ボタン用（こちらはボタンが1つなので青くしてOK） */
         .urge-action-solid {
             animation: ring-pulse 1.5s infinite;
             background-color: #3b82f6 !important;
@@ -501,6 +500,7 @@
                     state.util = ''; document.getElementById('util').value = '';
                     state.rentPeriod = null; state.utilPeriod = null;
                     
+                    // 家賃を消したらボタンを再ロック
                     document.querySelectorAll(`.period-btn[data-target="rent"], .period-btn[data-target="util"]`).forEach(b => {
                         b.disabled = true;
                         b.classList.remove('border-blue-500', 'text-blue-600', 'bg-blue-50', 'urge-action');
@@ -510,7 +510,7 @@
                 updateProgress();
             });
 
-            // ★ 数字入力時に強烈な「押してね波紋アニメ（urge-action）」を発動 ★
+            // ★ 数字入力時に波紋アニメ（色はグレーのまま）を発動 ★
             moneyInputs.forEach(input => {
                 input.addEventListener('input', (e) => {
                     let val = e.target.value.replace(/[０-９．]/g, s => String.fromCharCode(s.charCodeAt(0) - 0xFEE0)).replace(/[^0-9.]/g, '');
@@ -527,9 +527,9 @@
                             btn.disabled = !hasValue;
                             if (hasValue) {
                                 if (state[`${targetId}Period`] === null) {
-                                    // 未選択なら強烈に波紋を出す（背景は白のまま！）
-                                    btn.classList.add('urge-action');
-                                    btn.classList.remove('border-gray-200', 'text-gray-400', 'bg-blue-50', 'border-blue-500', 'text-blue-600');
+                                    // 未選択なら強烈に波紋を出す（背景や文字色はグレーのまま！）
+                                    btn.classList.add('urge-action', 'border-gray-200', 'text-gray-400');
+                                    btn.classList.remove('bg-blue-50', 'border-blue-500', 'text-blue-600');
                                 } else {
                                     const isCurrentPeriod = btn.dataset.val === state[`${targetId}Period`];
                                     btn.classList.remove('urge-action');
@@ -599,7 +599,6 @@
 
             // ★ ボタンが押されたら波紋アニメを消して色を固定する ★
             document.querySelectorAll('.period-btn').forEach(btn => {
-                // タッチ制御の小細工を全削除。素直なクリックイベントのみ！
                 btn.addEventListener('click', (e) => {
                     if(btn.disabled) return;
                     
@@ -658,7 +657,7 @@
                 const getMonthly = (valStr, period) => {
                     const num = parseFloat(valStr);
                     if (isNaN(num)) return 0;
-                    // periodが選ばれていない（null）場合は、未入力として扱うか、親切に月額として扱う
+                    // periodが選ばれていない（null）場合は、月額(そのまま)として計算
                     return (period === 'year') ? (num / 12) : num;
                 };
 
