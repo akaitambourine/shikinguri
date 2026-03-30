@@ -147,7 +147,7 @@
                     <div class="h-px bg-gray-300 flex-1"></div>
                     <span class="px-4 text-gray-400 font-bold text-[11px] tracking-wider text-center leading-tight">
                         ここから金額入力<br>
-                        <span class="text-[9px] font-medium text-gray-400">※無い項目は<span class="text-blue-500 font-bold">空欄でスルー</span>してOK！</span>
+                        <span class="text-[9px] font-medium text-gray-400">※無い項目は<span class="text-blue-500 font-bold">空欄のままでスルー</span>してOK！</span>
                     </span>
                     <div class="h-px bg-gray-300 flex-1"></div>
                 </div>
@@ -157,7 +157,7 @@
                     <p class="text-xs text-gray-400 mb-3">※ざっくりでOK！</p>
                     <div class="flex items-center">
                         <div class="relative flex-1 flex items-center bg-gray-50 border border-gray-200 rounded-xl transition-all shadow-inner input-group-focus overflow-hidden">
-                            <input type="text" inputmode="decimal" id="sales" class="money-input w-full bg-transparent px-4 py-3 text-xl font-black text-right outline-none text-gray-800" placeholder="例: 150" data-next="exp1">
+                            <input type="text" inputmode="decimal" id="sales" class="money-input w-full bg-transparent px-4 py-3 text-xl font-black text-right outline-none text-gray-800" placeholder="例: 150.5" data-next="exp1">
                             <span class="text-gray-500 font-bold pr-4">万</span>
                         </div>
                         <div class="flex gap-1.5 shrink-0 ml-2">
@@ -174,7 +174,7 @@
                         <label id="label-exp1" class="block font-bold mb-2 text-gray-600 text-sm">経費1</label>
                         <div class="flex items-center">
                             <div class="relative flex-1 flex items-center bg-gray-50 border border-gray-200 rounded-xl transition-all shadow-inner input-group-focus overflow-hidden">
-                                <input type="text" inputmode="decimal" id="exp1" class="money-input w-full bg-transparent px-4 py-3 text-lg font-bold text-right outline-none text-gray-800" placeholder="例: 30" data-next="exp2">
+                                <input type="text" inputmode="decimal" id="exp1" class="money-input w-full bg-transparent px-4 py-3 text-lg font-bold text-right outline-none text-gray-800" placeholder="例: 30.5" data-next="exp2">
                                 <span class="text-gray-500 font-bold pr-4">万</span>
                             </div>
                             <div class="flex gap-1.5 shrink-0 ml-2">
@@ -188,7 +188,7 @@
                         <label id="label-exp2" class="block font-bold mb-2 text-gray-600 text-sm">経費2</label>
                         <div class="flex items-center">
                             <div class="relative flex-1 flex items-center bg-gray-50 border border-gray-200 rounded-xl transition-all shadow-inner input-group-focus overflow-hidden">
-                                <input type="text" inputmode="decimal" id="exp2" class="money-input w-full bg-transparent px-4 py-3 text-lg font-bold text-right outline-none text-gray-800" placeholder="例: 15" data-next="exp3">
+                                <input type="text" inputmode="decimal" id="exp2" class="money-input w-full bg-transparent px-4 py-3 text-lg font-bold text-right outline-none text-gray-800" placeholder="例: 15.5" data-next="exp3">
                                 <span class="text-gray-500 font-bold pr-4">万</span>
                             </div>
                             <div class="flex gap-1.5 shrink-0 ml-2">
@@ -202,7 +202,7 @@
                         <label class="block font-bold mb-2 text-gray-600 text-sm">雑費・その他の経費</label>
                         <div class="flex items-center">
                             <div class="relative flex-1 flex items-center bg-gray-50 border border-gray-200 rounded-xl transition-all shadow-inner input-group-focus overflow-hidden">
-                                <input type="text" inputmode="decimal" id="exp3" class="money-input w-full bg-transparent px-4 py-3 text-lg font-bold text-right outline-none text-gray-800" placeholder="例: 5" data-next="labor">
+                                <input type="text" inputmode="decimal" id="exp3" class="money-input w-full bg-transparent px-4 py-3 text-lg font-bold text-right outline-none text-gray-800" placeholder="例: 5.5" data-next="labor">
                                 <span class="text-gray-500 font-bold pr-4">万</span>
                             </div>
                             <div class="flex gap-1.5 shrink-0 ml-2">
@@ -216,7 +216,7 @@
                         <label class="block font-bold mb-2 text-gray-600 text-sm">人件費（従業員・バイト等）</label>
                         <div class="flex items-center">
                             <div class="relative flex-1 flex items-center bg-gray-50 border border-gray-200 rounded-xl transition-all shadow-inner input-group-focus overflow-hidden">
-                                <input type="text" inputmode="decimal" id="labor" class="money-input w-full bg-transparent px-4 py-3 text-lg font-bold text-right outline-none text-gray-800" placeholder="※ない場合はスルー" data-next="rent-toggle-box">
+                                <input type="text" inputmode="decimal" id="labor" class="money-input w-full bg-transparent px-4 py-3 text-lg font-bold text-right outline-none text-gray-800" placeholder="例: 20.5" data-next="rent-toggle-box">
                                 <span class="text-gray-500 font-bold pr-4">万</span>
                             </div>
                             <div class="flex gap-1.5 shrink-0 ml-2">
@@ -248,7 +248,7 @@
                                 <label class="block font-bold mb-2 text-gray-600 text-sm">家賃・駐車場代</label>
                                 <div class="flex items-center">
                                     <div class="relative flex-1 flex items-center bg-gray-50 border border-gray-200 rounded-xl transition-all shadow-inner input-group-focus overflow-hidden">
-                                        <input type="text" inputmode="decimal" id="rent" class="money-input w-full bg-transparent px-4 py-3 text-lg font-bold text-right outline-none text-gray-800" placeholder="例: 8" data-next="util">
+                                        <input type="text" inputmode="decimal" id="rent" class="money-input w-full bg-transparent px-4 py-3 text-lg font-bold text-right outline-none text-gray-800" placeholder="例: 8.5" data-next="util">
                                         <span class="text-gray-500 font-bold pr-4">万</span>
                                     </div>
                                     <div class="flex gap-1.5 shrink-0 ml-2">
@@ -293,10 +293,9 @@
 
                     <div class="scroll-anchor" id="section-debt-monthly">
                         <label class="block font-bold text-gray-600 text-sm mb-1">毎月の返済額（元金）</label>
-                        <p class="text-[10px] text-gray-400 mb-2">※ない場合はスルー</p>
-                        <div class="flex items-center">
+                        <div class="flex items-center mt-2">
                             <div class="relative flex-1 flex items-center bg-gray-50 border border-gray-200 rounded-xl transition-all shadow-inner input-group-focus overflow-hidden">
-                                <input type="text" inputmode="decimal" id="debt_monthly" class="money-input w-full bg-transparent px-4 py-3 text-lg font-bold text-right outline-none text-gray-800" placeholder="例: 11" data-next="delinquency-anchor">
+                                <input type="text" inputmode="decimal" id="debt_monthly" class="money-input w-full bg-transparent px-4 py-3 text-lg font-bold text-right outline-none text-gray-800" placeholder="例: 11.5" data-next="delinquency-anchor">
                                 <span class="text-gray-500 font-bold pr-4">万</span>
                             </div>
                             <div class="flex gap-1.5 shrink-0 ml-2">
@@ -353,7 +352,6 @@
                 debt_total: '', debt_monthly: '',
                 salesPeriod: null, exp1Period: null, exp2Period: null, exp3Period: null, 
                 laborPeriod: null, rentPeriod: null, utilPeriod: null,
-                // ★ 通過フラグを管理（入力orボタンクリックでtrueにする）
                 sales_passed: false, exp1_passed: false, exp2_passed: false, exp3_passed: false,
                 labor_passed: false, rent_passed: false, util_passed: false,
                 debt_total_passed: false, debt_monthly_passed: false
@@ -437,15 +435,6 @@
                 }
             };
 
-            moneyInputs.forEach(input => {
-                input.addEventListener('focus', (e) => {
-                    const parentSection = e.target.closest('.scroll-anchor');
-                    if (parentSection) {
-                        setTimeout(() => scrollToElement(parentSection.id), 250);
-                    }
-                });
-            });
-
             const advanceToNext = (nextId) => {
                 if (!nextId) return;
                 
@@ -456,27 +445,36 @@
                 }
 
                 let targetId = nextId;
-                if (nextId === 'util-or-debt') targetId = state.hasRent ? 'util' : 'debt_total';
+                if (nextId === 'rent-or-debt') targetId = state.hasRent ? 'rent' : 'debt_total';
+                else if (nextId === 'util-or-debt') targetId = state.hasRent ? 'util' : 'debt_total';
 
-                if (targetId === 'rent') { scrollToElement('sub-rent'); document.getElementById('rent').focus(); }
-                else if (targetId === 'util') { scrollToElement('sub-util'); document.getElementById('util').focus(); }
-                else if (targetId === 'debt_total') { scrollToElement('section-debt-total'); document.getElementById('debt_total').focus(); }
-                else if (targetId === 'debt_monthly') { scrollToElement('section-debt-monthly'); document.getElementById('debt_monthly').focus(); }
-                else if (targetId === 'delinquency-anchor') { scrollToElement('section-delinquency'); document.activeElement.blur(); }
-                else {
+                if (targetId === 'delinquency-anchor') { 
+                    scrollToElement('section-delinquency'); 
+                    document.activeElement.blur(); 
+                } else {
                     const nextInput = document.getElementById(targetId);
-                    if (nextInput) { scrollToElement(`section-${targetId}`); nextInput.focus(); }
+                    if (nextInput) { 
+                        nextInput.focus({ preventScroll: true }); 
+                    }
                 }
             };
 
-            // ★ カウンター表示制御（全11〜13問をカウント対象にする） ★
+            moneyInputs.forEach(input => {
+                input.addEventListener('focus', (e) => {
+                    const parentSection = e.target.closest('.scroll-anchor');
+                    if (parentSection) {
+                        setTimeout(() => scrollToElement(parentSection.id), 150);
+                    }
+                });
+            });
+
+            // ★ カウンター表示制御（全項目でカウント） ★
             const updateProgress = () => {
                 const allFields = ['q1', 'q2', 'q3', 'sales', 'exp1', 'exp2', 'exp3', 'labor', 'debt_total', 'debt_monthly', 'delinquency'];
                 if (state.hasRent) { allFields.push('rent', 'util'); }
 
                 const filledCount = allFields.filter(key => {
                     if (['q1', 'q2', 'q3', 'delinquency'].includes(key)) return state[key] !== null;
-                    // 金額入力欄は、値が入っているか、通過フラグ(passed)が立っていればクリアとみなす
                     return state[key] !== '' || state[`${key}_passed`] === true;
                 }).length;
 
@@ -537,7 +535,7 @@
                         setTimeout(() => {
                             step2.classList.replace('opacity-0', 'opacity-100');
                             step2.classList.replace('translate-y-6', 'translate-y-0');
-                            setTimeout(() => { document.getElementById('sales').focus(); }, 400);
+                            setTimeout(() => { document.getElementById('sales').focus({ preventScroll: true }); }, 400);
                         }, 50);
                     }
 
@@ -552,13 +550,13 @@
                 state.hasRent = e.target.checked;
                 if (state.hasRent) {
                     rentWrapper.classList.add('open');
-                    setTimeout(() => { document.getElementById('rent').focus(); }, 300);
+                    setTimeout(() => { document.getElementById('rent').focus({ preventScroll: true }); }, 300);
                 } else {
                     rentWrapper.classList.remove('open');
                     state.rent = ''; document.getElementById('rent').value = '';
                     state.util = ''; document.getElementById('util').value = '';
                     state.rentPeriod = null; state.utilPeriod = null;
-                    state.rent_passed = false; state.util_passed = false; // 通過フラグもリセット
+                    state.rent_passed = false; state.util_passed = false;
                     
                     document.querySelectorAll(`.period-btn[data-target="rent"], .period-btn[data-target="util"]`).forEach(b => {
                         b.classList.remove('border-blue-500', 'text-blue-600', 'bg-blue-50', 'urge-action');
@@ -577,7 +575,6 @@
                     e.target.value = val; 
                     state[e.target.id] = val;
                     
-                    // 入力されたら通過フラグを立てる
                     if (val.length > 0) state[`${e.target.id}_passed`] = true;
 
                     const hasValue = val.length > 0;
@@ -626,7 +623,6 @@
                         e.preventDefault();
                         const targetId = input.id;
                         
-                        // Enterを押して進んだら通過フラグを立てる
                         state[`${targetId}_passed`] = true;
                         
                         if (targetId !== 'debt_total' && targetId !== 'debt_monthly' && state[`${targetId}Period`] === null && input.value.length > 0) {
@@ -648,17 +644,17 @@
                 });
             });
 
-            // ★ ボタンが押されたら波紋アニメを消して色を固定し、通過フラグを立てる ★
+            // ★ ボタンが押されたら色を固定し、通過フラグを立てて進む ★
             document.querySelectorAll('.period-btn').forEach(btn => {
                 btn.addEventListener('click', (e) => {
                     const targetId = btn.dataset.target;
                     const val = btn.dataset.val;
                     
                     state[`${targetId}Period`] = val;
-                    state[`${targetId}_passed`] = true; // ★ 通過フラグON
+                    state[`${targetId}_passed`] = true;
 
                     document.querySelectorAll(`.period-btn[data-target="${targetId}"]`).forEach(b => {
-                        b.classList.remove('urge-action'); // ここで波紋を消す
+                        b.classList.remove('urge-action');
                         if (b.dataset.val === val) {
                             b.classList.add('border-blue-500', 'text-blue-600', 'bg-blue-50');
                             b.classList.remove('border-gray-200', 'text-gray-400');
@@ -680,7 +676,7 @@
                     btn.classList.remove('urge-action-solid');
                     const targetId = btn.dataset.target;
                     
-                    state[`${targetId}_passed`] = true; // ★ 通過フラグON
+                    state[`${targetId}_passed`] = true;
                     updateProgress();
 
                     const inputEl = document.getElementById(targetId);
@@ -699,7 +695,6 @@
                     if(audioCtx.state === 'suspended') audioCtx.resume();
                 } catch(e){}
 
-                // 空欄やエラー時にNaNにならないように厳格化
                 const getMonthly = (valStr, period) => {
                     if (!valStr || valStr.trim() === '') return 0;
                     const num = parseFloat(valStr);
