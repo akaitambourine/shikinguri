@@ -270,7 +270,7 @@
 
         <footer id="footer-submit" class="fixed bottom-0 w-full z-40 left-0 right-0 mx-auto max-w-md pointer-events-none">
             <div class="px-4 py-4 relative">
-                <div id="submit-btn-wrapper" class="transform translate-y-full opacity-0 pointer-events-none transition-all duration-500 ease-out hidden">
+                <div id="submit-btn-wrapper" class="transform translate-y-full opacity-0 transition-all duration-500 ease-out pointer-events-auto hidden">
                     <button type="button" id="btn-submit" class="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold text-lg py-4 rounded-xl shadow-[0_10px_20px_-5px_rgba(59,130,246,0.4)] transform active:scale-95 transition-transform flex items-center justify-center">
                         <span class="mr-2 text-xl">✨</span> 診断する
                     </button>
@@ -300,9 +300,9 @@
                 sales: '', exp1: '', exp2: '', exp3: '', labor: '',
                 hasRent: false, rent: '', util: '',
                 debt_total: '', debt_monthly: '',
-                // デフォルトは「月」
-                salesPeriod: 'month', exp1Period: 'month', exp2Period: 'month', exp3Period: 'month', 
-                laborPeriod: 'month', rentPeriod: 'month', utilPeriod: 'month'
+                // ★ 初期状態をnullにして、どちらも選ばれていない状態からスタート ★
+                salesPeriod: null, exp1Period: null, exp2Period: null, exp3Period: null, 
+                laborPeriod: null, rentPeriod: null, utilPeriod: null
             };
 
             const expenseLabels = {
@@ -382,23 +382,15 @@
                 if (!nextId) return;
                 
                 let targetId = nextId;
-                if (nextId === 'rent-or-debt') {
-                    targetId = state.hasRent ? 'rent' : 'debt_total';
-                } else if (nextId === 'util-or-debt') {
-                    targetId = state.hasRent ? 'util' : 'debt_total';
-                }
+                if (nextId === 'rent-or-debt') targetId = state.hasRent ? 'rent' : 'debt_total';
+                else if (nextId === 'util-or-debt') targetId = state.hasRent ? 'util' : 'debt_total';
 
-                if (targetId === 'rent') {
-                    scrollToElement('sub-rent'); document.getElementById('rent').focus();
-                } else if (targetId === 'util') {
-                    scrollToElement('sub-util'); document.getElementById('util').focus();
-                } else if (targetId === 'debt_total') {
-                    scrollToElement('section-debt-total'); document.getElementById('debt_total').focus();
-                } else if (targetId === 'debt_monthly') {
-                    scrollToElement('section-debt-monthly'); document.getElementById('debt_monthly').focus();
-                } else if (targetId === 'delinquency-anchor') {
-                    scrollToElement('section-delinquency'); document.activeElement.blur(); 
-                } else {
+                if (targetId === 'rent') { scrollToElement('sub-rent'); document.getElementById('rent').focus(); }
+                else if (targetId === 'util') { scrollToElement('sub-util'); document.getElementById('util').focus(); }
+                else if (targetId === 'debt_total') { scrollToElement('section-debt-total'); document.getElementById('debt_total').focus(); }
+                else if (targetId === 'debt_monthly') { scrollToElement('section-debt-monthly'); document.getElementById('debt_monthly').focus(); }
+                else if (targetId === 'delinquency-anchor') { scrollToElement('section-delinquency'); document.activeElement.blur(); }
+                else {
                     const nextInput = document.getElementById(targetId);
                     if (nextInput) { scrollToElement(`section-${targetId}`); nextInput.focus(); }
                 }
@@ -425,7 +417,6 @@
                     remainingBox.classList.replace('border-emerald-200', 'border-blue-200');
 
                     submitBtnWrapper.classList.add('hidden');
-                    submitBtnWrapper.classList.add('pointer-events-none');
                     submitBtnWrapper.classList.replace('translate-y-0', 'translate-y-full');
                     submitBtnWrapper.classList.replace('opacity-100', 'opacity-0');
                 } else {
@@ -436,13 +427,13 @@
 
                     submitBtnWrapper.classList.remove('hidden');
                     requestAnimationFrame(() => {
-                        submitBtnWrapper.classList.remove('pointer-events-none');
                         submitBtnWrapper.classList.replace('translate-y-full', 'translate-y-0');
                         submitBtnWrapper.classList.replace('opacity-0', 'opacity-100');
                     });
                 }
             };
 
+            // --- Q1〜Q3・家賃トグルイベント ---
             qBtns.forEach(btn => {
                 btn.addEventListener('click', () => {
                     const q = btn.dataset.q;
@@ -492,18 +483,19 @@
                     rentWrapper.classList.remove('open');
                     state.rent = ''; document.getElementById('rent').value = '';
                     state.util = ''; document.getElementById('util').value = '';
+                    state.rentPeriod = null; state.utilPeriod = null;
                     
-                    // 家賃を消したらボタンを再ロック
+                    // リセットしてロック
                     document.querySelectorAll(`.period-btn[data-target="rent"], .period-btn[data-target="util"]`).forEach(b => {
                         b.disabled = true;
-                        b.classList.remove('border-blue-500', 'text-blue-500', 'animate-pulse');
+                        b.classList.remove('border-blue-400', 'border-blue-500', 'text-blue-500', 'text-blue-600', 'bg-blue-50', 'animate-pulse');
                         b.classList.add('border-gray-200', 'text-gray-400');
                     });
                 }
                 updateProgress();
             });
 
-            // ★ 数字入力時に横のボタンのロックを解除＆パルスアニメーション ★
+            // ★ 数字入力時にボタンを青く光らせてアピールする ★
             moneyInputs.forEach(input => {
                 input.addEventListener('input', (e) => {
                     let val = e.target.value.replace(/[０-９．]/g, s => String.fromCharCode(s.charCodeAt(0) - 0xFEE0)).replace(/[^0-9.]/g, '');
@@ -515,56 +507,82 @@
                     const hasValue = val.length > 0;
                     const targetId = e.target.id;
 
-                    // 月/年のボタン処理
-                    document.querySelectorAll(`.period-btn[data-target="${targetId}"]`).forEach(btn => {
-                        btn.disabled = !hasValue;
-                        const isCurrentPeriod = btn.dataset.val === state[`${targetId}Period`];
-
-                        if (hasValue) {
-                            if (isCurrentPeriod) {
-                                btn.classList.add('border-blue-500', 'text-blue-500', 'animate-pulse');
-                                btn.classList.remove('border-gray-200', 'text-gray-400');
+                    if (targetId !== 'debt_total' && targetId !== 'debt_monthly') {
+                        // 月/年ボタンの制御
+                        document.querySelectorAll(`.period-btn[data-target="${targetId}"]`).forEach(btn => {
+                            btn.disabled = !hasValue;
+                            if (hasValue) {
+                                if (state[`${targetId}Period`] === null) {
+                                    // どちらも選ばれていない時は両方を光らせて促す
+                                    btn.classList.add('border-blue-400', 'text-blue-500', 'animate-pulse');
+                                    btn.classList.remove('border-gray-200', 'text-gray-400', 'bg-blue-50', 'border-blue-500', 'text-blue-600');
+                                } else {
+                                    // すでにどちらかが選ばれている状態
+                                    const isCurrentPeriod = btn.dataset.val === state[`${targetId}Period`];
+                                    btn.classList.remove('animate-pulse', 'border-blue-400');
+                                    if (isCurrentPeriod) {
+                                        btn.classList.add('border-blue-500', 'text-blue-600', 'bg-blue-50');
+                                        btn.classList.remove('border-gray-200', 'text-gray-400', 'text-blue-500');
+                                    } else {
+                                        btn.classList.remove('border-blue-500', 'text-blue-600', 'bg-blue-50', 'text-blue-500');
+                                        btn.classList.add('border-gray-200', 'text-gray-400');
+                                    }
+                                }
                             } else {
-                                btn.classList.remove('border-blue-500', 'text-blue-500', 'animate-pulse');
+                                // 空欄になったら元に戻す
+                                btn.classList.remove('border-blue-500', 'text-blue-600', 'bg-blue-50', 'animate-pulse', 'border-blue-400', 'text-blue-500');
                                 btn.classList.add('border-gray-200', 'text-gray-400');
+                                state[`${targetId}Period`] = null; 
                             }
-                        } else {
-                            btn.classList.remove('border-blue-500', 'text-blue-500', 'animate-pulse');
-                            btn.classList.add('border-gray-200', 'text-gray-400');
-                        }
-                    });
-
-                    // 借金の次へ/完了ボタン処理
-                    document.querySelectorAll(`.action-next-btn[data-target="${targetId}"]`).forEach(btn => {
-                        btn.disabled = !hasValue;
-                        if (hasValue) {
-                            btn.classList.add('bg-blue-500', 'animate-pulse');
-                            btn.classList.remove('bg-gray-300');
-                        } else {
-                            btn.classList.remove('bg-blue-500', 'animate-pulse');
-                            btn.classList.add('bg-gray-300');
-                        }
-                    });
+                        });
+                    } else {
+                        // 借金の次へ/完了ボタンの制御
+                        document.querySelectorAll(`.action-next-btn[data-target="${targetId}"]`).forEach(btn => {
+                            btn.disabled = !hasValue;
+                            if (hasValue) {
+                                btn.classList.add('bg-blue-500', 'animate-pulse');
+                                btn.classList.remove('bg-gray-300');
+                            } else {
+                                btn.classList.remove('bg-blue-500', 'animate-pulse');
+                                btn.classList.add('bg-gray-300');
+                            }
+                        });
+                    }
 
                     updateProgress();
                 });
 
-                // Enterキー対応
+                // Enterキーで進んだ場合は、選ばれていなければ強制的に「月」を選択したことにする
                 input.addEventListener('keydown', (e) => {
                     if (e.key === 'Enter') {
                         e.preventDefault();
+                        const targetId = input.id;
+                        
+                        if (targetId !== 'debt_total' && targetId !== 'debt_monthly' && state[`${targetId}Period`] === null && input.value.length > 0) {
+                            state[`${targetId}Period`] = 'month';
+                            document.querySelectorAll(`.period-btn[data-target="${targetId}"]`).forEach(b => {
+                                b.classList.remove('animate-pulse', 'border-blue-400', 'text-blue-500');
+                                if (b.dataset.val === 'month') {
+                                    b.classList.add('border-blue-500', 'text-blue-600', 'bg-blue-50');
+                                    b.classList.remove('border-gray-200', 'text-gray-400');
+                                } else {
+                                    b.classList.add('border-gray-200', 'text-gray-400');
+                                }
+                            });
+                        }
+
                         const nextId = input.dataset.next;
-                        let targetId = nextId;
-                        if (nextId === 'rent-or-debt') targetId = state.hasRent ? 'rent' : 'debt_total';
-                        else if (nextId === 'util-or-debt') targetId = state.hasRent ? 'util' : 'debt_total';
-                        advanceToNext(targetId);
+                        let jumpId = nextId;
+                        if (nextId === 'rent-or-debt') jumpId = state.hasRent ? 'rent' : 'debt_total';
+                        else if (nextId === 'util-or-debt') jumpId = state.hasRent ? 'util' : 'debt_total';
+                        advanceToNext(jumpId);
                     }
                 });
             });
 
             // ★ ボタンを押した時の処理（押した方が青く固定され、次へ進む） ★
-            // ※ここでpreventDefaultを外したため、正常にクリックイベントが発動します。
             document.querySelectorAll('.period-btn').forEach(btn => {
+                // タッチ無効化の小細工を削除！自然なクリックイベントを使います。
                 btn.addEventListener('click', (e) => {
                     if(btn.disabled) return;
                     
@@ -576,17 +594,18 @@
 
                     // 押されたボタンを青で固定、もう片方をグレーに。パルスは消す。
                     document.querySelectorAll(`.period-btn[data-target="${targetId}"]`).forEach(b => {
-                        b.classList.remove('animate-pulse');
+                        b.classList.remove('animate-pulse', 'border-blue-400', 'text-blue-500');
                         if (b.dataset.val === val) {
-                            b.classList.add('border-blue-500', 'text-blue-500');
+                            b.classList.add('border-blue-500', 'text-blue-600', 'bg-blue-50');
                             b.classList.remove('border-gray-200', 'text-gray-400');
                         } else {
-                            b.classList.remove('border-blue-500', 'text-blue-500');
+                            b.classList.remove('border-blue-500', 'text-blue-600', 'bg-blue-50');
                             b.classList.add('border-gray-200', 'text-gray-400');
                         }
                     });
 
                     // 次へ進む
+                    const inputEl = document.getElementById(targetId);
                     let nextId = '';
                     if (targetId === 'sales') nextId = 'exp1';
                     if (targetId === 'exp1') nextId = 'exp2';
@@ -613,7 +632,7 @@
             });
 
             // ==============================================
-            // 診断実行 ＆ 絶望アニメーション（バグ完全修正済）
+            // 診断実行 ＆ 絶望アニメーション
             // ==============================================
             btnSubmit.addEventListener('click', () => {
                 document.activeElement.blur(); 
@@ -623,10 +642,11 @@
                     if(audioCtx.state === 'suspended') audioCtx.resume();
                 } catch(e){}
 
-                // ★ 空欄やエラー時にNaNにならないように厳格化 ★
+                // 空欄やエラー時にNaNにならないように厳格化
                 const getMonthly = (valStr, period) => {
                     const num = parseFloat(valStr);
                     if (isNaN(num)) return 0;
+                    // もしperiodが選ばれていなければ月額(そのまま)として計算
                     return period === 'year' ? (num / 12) : num;
                 };
 
