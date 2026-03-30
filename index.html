@@ -34,8 +34,8 @@
         }
 
         /* 押した瞬間にへこむアクション */
-        .period-btn:active, .action-next-btn:active {
-            transform: scale(0.92);
+        .period-btn:active, .action-next-btn:active, #btn-start:active, .q-btn:active {
+            transform: scale(0.95);
             transition: all 0.05s;
         }
 
@@ -44,11 +44,9 @@
             0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4); }
             100% { box-shadow: 0 0 0 10px rgba(59, 130, 246, 0); }
         }
-        /* 月/年ボタン用（色はグレーのままで波紋だけ出す） */
         .urge-action {
             animation: ring-pulse 1.5s infinite;
         }
-        /* 次へ/完了ボタン用（こちらはボタンが1つなので青くしてOK） */
         .urge-action-solid {
             animation: ring-pulse 1.5s infinite;
             background-color: #3b82f6 !important;
@@ -58,8 +56,39 @@
 </head>
 <body class="bg-gray-100 text-gray-800 font-sans pb-32 transition-colors duration-700" id="body">
 
-    <div id="view-form">
-        <header class="fixed top-0 w-full z-50 bg-white shadow-sm border-b border-gray-200 left-0 right-0 mx-auto max-w-md">
+    <div id="view-start" class="min-h-screen bg-gradient-to-b from-blue-50 to-gray-100 flex flex-col justify-center items-center px-4 relative transition-opacity duration-300 z-50">
+        <div class="absolute top-0 w-full h-[35vh] bg-blue-600 rounded-b-[40px] shadow-md z-0"></div>
+        
+        <div class="bg-white rounded-3xl shadow-xl p-6 w-full max-w-md relative z-10 border border-gray-100 mt-10">
+            <div class="text-center mb-6">
+                <span class="inline-block bg-red-100 text-red-600 px-3 py-1.5 rounded-full text-xs font-bold mb-4 animate-pulse">黒字倒産を防ぐ！</span>
+                <h1 class="text-2xl font-black text-gray-800 leading-tight mb-3">
+                    あなたの会社、<br>本当は<span class="text-blue-600 text-3xl">いくら残る？</span>
+                </h1>
+                <p class="text-sm text-gray-500 font-medium">容赦ない税金・社会保険料を引いた<br>「真の手残り現金」を無料診断</p>
+            </div>
+
+            <ul class="space-y-3 mb-8">
+                <li class="flex items-center text-sm font-bold text-gray-700 bg-gray-50 p-3.5 rounded-xl border border-gray-100">
+                    <span class="text-blue-500 text-xl mr-3">✅</span> 会社名・メアドなど個人情報ゼロ
+                </li>
+                <li class="flex items-center text-sm font-bold text-gray-700 bg-gray-50 p-3.5 rounded-xl border border-gray-100">
+                    <span class="text-blue-500 text-xl mr-3">✅</span> スマホでポチポチ最短1分
+                </li>
+                <li class="flex items-center text-sm font-bold text-gray-700 bg-gray-50 p-3.5 rounded-xl border border-gray-100">
+                    <span class="text-blue-500 text-xl mr-3">✅</span> 最適な「資金繰り対策」が分かる
+                </li>
+            </ul>
+
+            <button type="button" id="btn-start" class="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold text-lg py-4 rounded-xl shadow-[0_10px_20px_-5px_rgba(59,130,246,0.4)] flex items-center justify-center">
+                無料診断をスタート <span class="ml-2">🚀</span>
+            </button>
+            <p class="text-center text-[10px] text-gray-400 mt-4">※シミュレーション結果は概算の目安です</p>
+        </div>
+    </div>
+
+    <div id="view-form" class="hidden opacity-0 transition-opacity duration-500">
+        <header class="fixed top-0 w-full z-40 bg-white shadow-sm border-b border-gray-200 left-0 right-0 mx-auto max-w-md">
             <div class="px-4 py-2.5 flex items-center justify-between">
                 <div class="flex flex-col">
                     <p class="text-[10px] text-gray-500 font-bold mb-0.5">最短1分・個人情報不要</p>
@@ -81,13 +110,13 @@
                         <span class="bg-blue-100 text-blue-700 text-xs py-1 px-2.5 rounded-md mr-2 font-black">Q1</span>あなたの業種は？
                     </h2>
                     <div class="grid grid-cols-2 gap-2" id="q1-group">
-                        <button type="button" class="q-btn text-left px-3 py-3 rounded-xl border-2 border-gray-100 bg-gray-50 text-gray-600 text-sm font-medium hover:bg-gray-100 transition-colors active:scale-[0.98]" data-q="q1" data-val="1">👷 建設・一人親方</button>
-                        <button type="button" class="q-btn text-left px-3 py-3 rounded-xl border-2 border-gray-100 bg-gray-50 text-gray-600 text-sm font-medium hover:bg-gray-100 transition-colors active:scale-[0.98]" data-q="q1" data-val="2">🍳 飲食店・カフェ</button>
-                        <button type="button" class="q-btn text-left px-3 py-3 rounded-xl border-2 border-gray-100 bg-gray-50 text-gray-600 text-sm font-medium hover:bg-gray-100 transition-colors active:scale-[0.98]" data-q="q1" data-val="3">✂️ 美容・サロン</button>
-                        <button type="button" class="q-btn text-left px-3 py-3 rounded-xl border-2 border-gray-100 bg-gray-50 text-gray-600 text-sm font-medium hover:bg-gray-100 transition-colors active:scale-[0.98]" data-q="q1" data-val="4">📦 小売・EC</button>
-                        <button type="button" class="q-btn text-left px-3 py-3 rounded-xl border-2 border-gray-100 bg-gray-50 text-gray-600 text-sm font-medium hover:bg-gray-100 transition-colors active:scale-[0.98]" data-q="q1" data-val="5">🚚 軽貨物</button>
-                        <button type="button" class="q-btn text-left px-3 py-3 rounded-xl border-2 border-gray-100 bg-gray-50 text-gray-600 text-sm font-medium hover:bg-gray-100 transition-colors active:scale-[0.98]" data-q="q1" data-val="6">💻 IT・フリー</button>
-                        <button type="button" class="q-btn col-span-2 text-center px-4 py-3.5 rounded-xl border-2 border-gray-100 bg-gray-50 text-gray-600 font-medium hover:bg-gray-100 transition-colors active:scale-[0.98]" data-q="q1" data-val="7">📁 その他</button>
+                        <button type="button" class="q-btn text-left px-3 py-3 rounded-xl border-2 border-gray-100 bg-gray-50 text-gray-600 text-sm font-medium hover:bg-gray-100 transition-colors" data-q="q1" data-val="1">👷 建設・一人親方</button>
+                        <button type="button" class="q-btn text-left px-3 py-3 rounded-xl border-2 border-gray-100 bg-gray-50 text-gray-600 text-sm font-medium hover:bg-gray-100 transition-colors" data-q="q1" data-val="2">🍳 飲食店・カフェ</button>
+                        <button type="button" class="q-btn text-left px-3 py-3 rounded-xl border-2 border-gray-100 bg-gray-50 text-gray-600 text-sm font-medium hover:bg-gray-100 transition-colors" data-q="q1" data-val="3">✂️ 美容・サロン</button>
+                        <button type="button" class="q-btn text-left px-3 py-3 rounded-xl border-2 border-gray-100 bg-gray-50 text-gray-600 text-sm font-medium hover:bg-gray-100 transition-colors" data-q="q1" data-val="4">📦 小売・EC</button>
+                        <button type="button" class="q-btn text-left px-3 py-3 rounded-xl border-2 border-gray-100 bg-gray-50 text-gray-600 text-sm font-medium hover:bg-gray-100 transition-colors" data-q="q1" data-val="5">🚚 軽貨物</button>
+                        <button type="button" class="q-btn text-left px-3 py-3 rounded-xl border-2 border-gray-100 bg-gray-50 text-gray-600 text-sm font-medium hover:bg-gray-100 transition-colors" data-q="q1" data-val="6">💻 IT・フリー</button>
+                        <button type="button" class="q-btn col-span-2 text-center px-4 py-3.5 rounded-xl border-2 border-gray-100 bg-gray-50 text-gray-600 font-medium hover:bg-gray-100 transition-colors" data-q="q1" data-val="7">📁 その他</button>
                     </div>
                 </div>
 
@@ -96,9 +125,9 @@
                         <span class="bg-blue-100 text-blue-700 text-xs py-1 px-2.5 rounded-md mr-2 font-black">Q2</span>申告スタイルは？
                     </h2>
                     <div class="grid grid-cols-3 gap-2" id="q2-group">
-                        <button type="button" class="q-btn text-center px-1 py-3.5 rounded-xl border-2 border-gray-100 bg-gray-50 text-gray-600 text-xs font-bold transition-colors active:scale-[0.98]" data-q="q2" data-val="white">個人(白色)</button>
-                        <button type="button" class="q-btn text-center px-1 py-3.5 rounded-xl border-2 border-gray-100 bg-gray-50 text-gray-600 text-xs font-bold transition-colors active:scale-[0.98]" data-q="q2" data-val="blue">個人(青色)</button>
-                        <button type="button" class="q-btn text-center px-1 py-3.5 rounded-xl border-2 border-gray-100 bg-gray-50 text-gray-600 text-xs font-bold transition-colors active:scale-[0.98]" data-q="q2" data-val="corp">法人</button>
+                        <button type="button" class="q-btn text-center px-1 py-3.5 rounded-xl border-2 border-gray-100 bg-gray-50 text-gray-600 text-xs font-bold transition-colors" data-q="q2" data-val="white">個人(白色)</button>
+                        <button type="button" class="q-btn text-center px-1 py-3.5 rounded-xl border-2 border-gray-100 bg-gray-50 text-gray-600 text-xs font-bold transition-colors" data-q="q2" data-val="blue">個人(青色)</button>
+                        <button type="button" class="q-btn text-center px-1 py-3.5 rounded-xl border-2 border-gray-100 bg-gray-50 text-gray-600 text-xs font-bold transition-colors" data-q="q2" data-val="corp">法人</button>
                     </div>
                 </div>
 
@@ -107,8 +136,8 @@
                         <span class="bg-blue-100 text-blue-700 text-xs py-1 px-2.5 rounded-md mr-2 font-black">Q3</span>インボイスに登録してる？
                     </h2>
                     <div class="grid grid-cols-2 gap-2" id="q3-group">
-                        <button type="button" class="q-btn text-center px-2 py-4 rounded-xl border-2 border-gray-100 bg-gray-50 text-gray-600 text-sm font-bold transition-colors active:scale-[0.98]" data-q="q3" data-val="no">未登録(免税)</button>
-                        <button type="button" class="q-btn text-center px-2 py-4 rounded-xl border-2 border-gray-100 bg-gray-50 text-gray-600 text-sm font-bold transition-colors active:scale-[0.98]" data-q="q3" data-val="yes">登録済(課税)</button>
+                        <button type="button" class="q-btn text-center px-2 py-4 rounded-xl border-2 border-gray-100 bg-gray-50 text-gray-600 text-sm font-bold transition-colors" data-q="q3" data-val="no">未登録(免税)</button>
+                        <button type="button" class="q-btn text-center px-2 py-4 rounded-xl border-2 border-gray-100 bg-gray-50 text-gray-600 text-sm font-bold transition-colors" data-q="q3" data-val="yes">登録済(課税)</button>
                     </div>
                 </div>
             </div>
@@ -128,7 +157,7 @@
                             <input type="text" inputmode="decimal" id="sales" class="money-input w-full bg-transparent px-4 py-3 text-xl font-black text-right outline-none text-gray-800" placeholder="例: 150.5">
                             <span class="text-gray-500 font-bold pr-4">万</span>
                         </div>
-                        <div class="flex gap-1.5 shrink-0 ml-2">
+                        <div class="flex gap-1 shrink-0 ml-2">
                             <button type="button" class="period-btn w-12 h-12 rounded-xl text-sm font-bold border-2 border-gray-200 text-gray-400 bg-white transition-all disabled:opacity-50 disabled:cursor-not-allowed" data-target="sales" data-val="month" disabled>月</button>
                             <button type="button" class="period-btn w-12 h-12 rounded-xl text-sm font-bold border-2 border-gray-200 text-gray-400 bg-white transition-all disabled:opacity-50 disabled:cursor-not-allowed" data-target="sales" data-val="year" disabled>年</button>
                         </div>
@@ -316,7 +345,6 @@
                 sales: '', exp1: '', exp2: '', exp3: '', labor: '',
                 hasRent: false, rent: '', util: '',
                 debt_total: '', debt_monthly: '',
-                // ★ 最初は何も選ばれていない状態 ★
                 salesPeriod: null, exp1Period: null, exp2Period: null, exp3Period: null, 
                 laborPeriod: null, rentPeriod: null, utilPeriod: null
             };
@@ -338,6 +366,22 @@
             const rentWrapper = document.getElementById('rent-wrapper');
             const submitBtnWrapper = document.getElementById('submit-btn-wrapper');
             const btnSubmit = document.getElementById('btn-submit');
+            
+            // ★ スタート画面の制御 ★
+            document.getElementById('btn-start').addEventListener('click', () => {
+                const startView = document.getElementById('view-start');
+                const formView = document.getElementById('view-form');
+                
+                startView.classList.add('opacity-0');
+                setTimeout(() => {
+                    startView.classList.add('hidden');
+                    formView.classList.remove('hidden');
+                    // フェードイン
+                    requestAnimationFrame(() => {
+                        formView.classList.remove('opacity-0');
+                    });
+                }, 300);
+            });
             
             // --- Web Audio API ---
             let audioCtx = null;
@@ -500,7 +544,6 @@
                     state.util = ''; document.getElementById('util').value = '';
                     state.rentPeriod = null; state.utilPeriod = null;
                     
-                    // 家賃を消したらボタンを再ロック
                     document.querySelectorAll(`.period-btn[data-target="rent"], .period-btn[data-target="util"]`).forEach(b => {
                         b.disabled = true;
                         b.classList.remove('border-blue-500', 'text-blue-600', 'bg-blue-50', 'urge-action');
@@ -528,7 +571,7 @@
                             if (hasValue) {
                                 if (state[`${targetId}Period`] === null) {
                                     // 未選択なら強烈に波紋を出す（背景や文字色はグレーのまま！）
-                                    btn.classList.add('urge-action', 'border-gray-200', 'text-gray-400');
+                                    btn.classList.add('urge-action');
                                     btn.classList.remove('bg-blue-50', 'border-blue-500', 'text-blue-600');
                                 } else {
                                     const isCurrentPeriod = btn.dataset.val === state[`${targetId}Period`];
@@ -562,7 +605,7 @@
                     updateProgress();
                 });
 
-                // Enterキーで進んだ場合は、選ばれていなければ強制的に「月」を選択して波紋を消す
+                // Enterキー対応
                 input.addEventListener('keydown', (e) => {
                     if (e.key === 'Enter') {
                         e.preventDefault();
@@ -632,7 +675,7 @@
             document.querySelectorAll('.action-next-btn').forEach(btn => {
                 btn.addEventListener('click', (e) => {
                     if(btn.disabled) return;
-                    btn.classList.remove('urge-action-solid'); // ここで波紋を消す
+                    btn.classList.remove('urge-action-solid');
 
                     const targetId = btn.dataset.target;
                     let nextId = '';
@@ -657,8 +700,7 @@
                 const getMonthly = (valStr, period) => {
                     const num = parseFloat(valStr);
                     if (isNaN(num)) return 0;
-                    // periodが選ばれていない（null）場合は、月額(そのまま)として計算
-                    return (period === 'year') ? (num / 12) : num;
+                    return period === 'year' ? (num / 12) : num;
                 };
 
                 const m_sales = getMonthly(state.sales, state.salesPeriod);
